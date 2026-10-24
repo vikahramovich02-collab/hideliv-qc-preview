@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>hideliv — идея знака</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap">
+<style>
+/* Объяснение знака hideliv: коробка + лупа = проверка товара до отгрузки */
+:root{--blue:#2446D9;--ink:#151617;--grey:#6B7079;--line:#E4E4E4}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;font-family:Onest,sans-serif;color:var(--ink)}
+.page{width:1440px;padding:72px 80px}
+.mark{font-size:14px;color:var(--grey);display:flex;align-items:center;gap:8px}
+.mark::before{content:"";width:6px;height:6px;background:var(--blue)}
+h1{margin:20px 0 0;font-weight:500;font-size:56px;letter-spacing:-.03em}
+.lead{margin:16px 0 0;font-size:20px;color:var(--grey);max-width:60ch;line-height:1.45}
+
+.eq{display:grid;grid-template-columns:1fr 56px 1fr 56px 1fr;align-items:center;margin-top:64px}
+.cell{background:#F3F3F3;border-radius:10px;height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.cell svg{width:150px;height:150px}
+.cell b{font-weight:500;font-size:22px}
+.cell span{font-size:15px;color:var(--grey);margin-top:-18px;text-align:center;max-width:26ch;line-height:1.4}
+.op{text-align:center;font-size:40px;color:var(--grey);font-weight:300}
+.cell.res{background:var(--blue);color:#fff}
+.cell.res span{color:rgba(255,255,255,.75)}
+
+.parts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;border-top:1px solid var(--line);padding-top:40px}
+.parts div{font-size:16px;line-height:1.5;color:var(--grey)}
+.parts b{display:block;color:var(--ink);font-weight:500;font-size:18px;margin-bottom:8px}
+.parts i{font-style:normal;color:var(--blue)}
+
+.lock{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
+.lock div{height:200px;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:14px}
+.lock svg{width:52px;height:52px}
+.lock span{font-weight:600;font-size:52px;letter-spacing:-.035em}
+.l1{background:#F3F3F3}.l2{background:#0B0D12;color:#fff}.l3{background:var(--blue);color:#fff}
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="mark">Знак hideliv</p>
+  <h1>Коробка + лупа = проверенная партия</h1>
+  <p class="lead">Квадрат — это коробка с товаром, лупа вырезана в ней насквозь: инспектор заглядывает внутрь партии и находит то, что скрыто. Отсюда и имя — hide (скрытое) + deliv (поставка).</p>
+
+  <div class="eq">
+    <div class="cell">
+      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3" fill="none" stroke="#151617" stroke-width="1.2"/></svg>
+      <b>Коробка</b><span>партия товара на фабрике</span>
+    </div>
+    <div class="op">+</div>
+    <div class="cell">
+      <svg viewBox="0 0 24 24"><circle cx="14" cy="10" r="6.5" fill="none" stroke="#151617" stroke-width="1.2"/><path d="M9.4 14.6 3.5 20.5" stroke="#151617" stroke-width="1.2" stroke-linecap="round"/><circle cx="11.6" cy="7.6" r=".9" fill="#151617"/></svg>
+      <b>Лупа</b><span>инспекция и поиск скрытого брака</span>
+    </div>
+    <div class="op">=</div>
+    <div class="cell res">
+      <svg viewBox="0 0 24 24"><defs><mask id="m1"><rect width="24" height="24" fill="#fff"/><g fill="#000"><circle cx="15.2" cy="8.8" r="8.8"/><path d="M16.4 10 14 7.6-1.2 22.8 1.2 25.2Z"/></g><circle cx="11.4" cy="5.4" r="1.6" fill="#fff"/></mask></defs><rect width="24" height="24" rx="3" fill="#fff" mask="url(#m1)"/></svg>
+      <b>hideliv</b><span>заглядываем в партию до оплаты</span>
+    </div>
+  </div>
+
+
+  <div class="lock">
+    <div class="l1"><svg viewBox="0 0 24 24"><defs><mask id="m2"><rect width="24" height="24" fill="#fff"/><g fill="#000"><circle cx="15.2" cy="8.8" r="8.8"/><path d="M16.4 10 14 7.6-1.2 22.8 1.2 25.2Z"/></g><circle cx="11.4" cy="5.4" r="1.6" fill="#fff"/></mask></defs><rect width="24" height="24" rx="3" fill="#2446D9" mask="url(#m2)"/></svg><span>hideliv</span></div>
+    <div class="l2"><svg viewBox="0 0 24 24"><defs><mask id="m3"><rect width="24" height="24" fill="#fff"/><g fill="#000"><circle cx="15.2" cy="8.8" r="8.8"/><path d="M16.4 10 14 7.6-1.2 22.8 1.2 25.2Z"/></g><circle cx="11.4" cy="5.4" r="1.6" fill="#fff"/></mask></defs><rect width="24" height="24" rx="3" fill="#2446D9" mask="url(#m3)"/></svg><span>hideliv</span></div>
+    <div class="l3"><svg viewBox="0 0 24 24"><defs><mask id="m4"><rect width="24" height="24" fill="#fff"/><g fill="#000"><circle cx="15.2" cy="8.8" r="8.8"/><path d="M16.4 10 14 7.6-1.2 22.8 1.2 25.2Z"/></g><circle cx="11.4" cy="5.4" r="1.6" fill="#fff"/></mask></defs><rect width="24" height="24" rx="3" fill="#fff" mask="url(#m4)"/></svg><span>hideliv</span></div>
+  </div>
+</div>
+</body>
+</html>

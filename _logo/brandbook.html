@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>hideliv — брендбук</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap">
+<style>
+/* Мини-брендбук hideliv: знак, построение по сетке, логотип на фонах сайта, цвет и шрифт.
+   Каждая .page — отдельный слайд 1920×1080, рендерится в PNG. */
+:root{--blue:#2446D9;--navy:#152A7C;--ink:#121315;--muted:#6B7079;--line:#E3E4E7;--soft:#F3F4F6;--deep:#0E0F11}
+*{box-sizing:border-box;margin:0}
+body{background:#C9CBCE;font-family:Onest,sans-serif;color:var(--ink)}
+.page{width:1920px;height:1080px;position:relative;overflow:hidden;background:#fff;margin:0 auto 24px;padding:96px 112px}
+.mk{display:flex;align-items:center;gap:10px;font-size:18px;color:var(--muted)}
+.mk::before{content:"";width:8px;height:8px;background:var(--blue)}
+.mk b{color:var(--ink);font-weight:400}
+h1{font-weight:400;font-size:96px;letter-spacing:-.04em;line-height:1}
+h2{font-weight:400;font-size:64px;letter-spacing:-.035em;line-height:1.05;margin-top:24px}
+.lead{margin-top:28px;font-size:24px;line-height:1.45;color:var(--muted);max-width:44ch}
+.foot{position:absolute;left:112px;right:112px;bottom:56px;display:flex;justify-content:space-between;font-size:16px;color:var(--muted)}
+.mark svg{display:block}
+.lock{display:flex;align-items:center}
+.lock span{font-weight:600;letter-spacing:-.035em;line-height:1}
+
+/* 1 обложка */
+.cover{background:var(--blue);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.cover .mk{color:rgba(255,255,255,.7)}.cover .mk::before{background:#fff}.cover .mk b{color:#fff}
+.cover .foot{color:rgba(255,255,255,.7)}
+
+/* 2 идея */
+.eq{display:grid;grid-template-columns:1fr 72px 1fr 72px 1fr;align-items:center;margin-top:72px}
+.cell{background:var(--soft);border-radius:16px;height:460px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.cell b{font-weight:500;font-size:28px}
+.cell small{font-size:18px;color:var(--muted);margin-top:-24px}
+.cell.res{background:var(--blue);color:#fff}.cell.res small{color:rgba(255,255,255,.75)}
+.op{text-align:center;font-size:56px;color:var(--muted);font-weight:300}
+
+/* 3 сетка */
+.gridwrap{display:grid;grid-template-columns:620px 1fr;gap:96px;margin-top:56px;align-items:center}
+.construct{position:relative;width:620px;height:620px;background:var(--soft);border-radius:16px}
+.notes{display:flex;flex-direction:column;gap:28px}
+.notes div{border-top:1px solid var(--line);padding-top:20px;font-size:20px;line-height:1.45;color:var(--muted)}
+.notes b{display:block;color:var(--ink);font-weight:500;font-size:22px;margin-bottom:6px}
+.notes i{font-style:normal;color:var(--blue)}
+
+/* 4 логотип на фонах сайта */
+.bgs{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:20px;position:absolute;inset:220px 112px 112px}
+.bg{border-radius:16px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center}
+.bg::after{content:attr(data-n);position:absolute;left:24px;bottom:20px;font-size:15px;color:rgba(255,255,255,.75)}
+.bg.light::after{color:var(--muted)}
+.bg .lock span{font-size:72px}
+
+/* 5 цвет + шрифт */
+.sw{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:20px;margin-top:64px;height:360px}
+.sw div{border-radius:16px;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;font-size:18px}
+.sw b{font-weight:500;font-size:24px;margin-bottom:6px}
+.type{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:56px;border-top:1px solid var(--line);padding-top:40px}
+.type .big{font-size:120px;letter-spacing:-.04em;line-height:1}
+.type p{font-size:20px;color:var(--muted);line-height:1.5}
+
+/* 6 применение */
+.apps{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;position:absolute;inset:220px 112px 112px}
+.shot{border-radius:16px;overflow:hidden;background:var(--soft)}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block}
+.stack{display:grid;grid-template-rows:1fr 1fr;gap:20px}
+.card{border-radius:16px;display:flex;align-items:center;justify-content:center}
+
+/* построение: на всю страницу */
+.cons-blue{background:#2446D9;color:#fff;padding:0}
+.cons-grey{background:#E7E8EA;padding:0}
+.cons-svg{position:absolute;inset:0}
+.cons-txt{position:absolute;left:112px;top:96px;width:620px}
+.cons-blue .mk{color:rgba(255,255,255,.75)}.cons-blue .mk::before{background:#fff}.cons-blue .mk b{color:#fff}
+.cons-blue h2{color:#fff}
+.cons-txt ul{list-style:none;padding:0;margin-top:48px;display:flex;flex-direction:column;gap:0}
+.cons-txt li{border-top:1px solid rgba(255,255,255,.25);padding:18px 0;font-size:20px;color:rgba(255,255,255,.75)}
+.cons-txt li b{color:#fff;font-weight:500;margin-right:12px}
+.cons-blue .foot{color:rgba(255,255,255,.7)}
+</style>
+</head>
+<body>
+<template id="mk"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><mask id="M"><rect width="24" height="24" fill="#fff"/><g fill="#000"><circle cx="15.2" cy="8.8" r="8.8"/><path d="M16.4 10 14 7.6-1.2 22.8 1.2 25.2Z"/></g><circle cx="11.4" cy="5.4" r="1.6" fill="#fff"/></mask></defs><rect width="24" height="24" rx="3" fill="F" mask="url(#M)"/></svg></template>
+
+<!-- 1 -->
+<section class="page cover">
+  <p class="mk"><b>hideliv</b> · брендбук · 2026</p>
+  <div><div class="lock" style="gap:36px" data-mark="#fff" data-size="200"><span style="font-size:240px">hideliv</span></div>
+    <p class="lead" style="color:rgba(255,255,255,.8)">Инспекция товаров в&nbsp;Китае и&nbsp;других странах. Знак, сетка, цвет и&nbsp;применение.</p></div>
+  <div class="foot"><span>hideliv QC</span><span>01</span></div>
+</section>
+
+<!-- 2 -->
+<section class="page">
+  <p class="mk"><b>Идея знака</b></p>
+  <h2>Коробка + лупа = проверенная партия</h2>
+  <p class="lead">Квадрат — коробка с&nbsp;товаром. Лупа вырезана насквозь: мы&nbsp;заглядываем внутрь партии и&nbsp;находим скрытое. hide — скрытое, deliv — поставка.</p>
+  <div class="eq">
+    <div class="cell"><svg width="180" height="180" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3" fill="none" stroke="#121315" stroke-width="1.1"/></svg><b>Коробка</b><small>партия товара на фабрике</small></div>
+    <div class="op">+</div>
+    <div class="cell"><svg width="180" height="180" viewBox="0 0 24 24"><circle cx="14" cy="10" r="6.5" fill="none" stroke="#121315" stroke-width="1.1"/><path d="M9.4 14.6 3.5 20.5" stroke="#121315" stroke-width="1.1" stroke-linecap="round"/><circle cx="11.6" cy="7.6" r=".9" fill="#121315"/></svg><b>Лупа</b><small>инспекция и поиск скрытого брака</small></div>
+    <div class="op">=</div>
+    <div class="cell res"><span class="mark" data-mark="#fff" data-size="180"></span><b>hideliv</b><small>заглядываем в партию до оплаты</small></div>
+  </div>
+  <div class="foot"><span>hideliv QC</span><span>02</span></div>
+</section>
+
+<!-- 3 -->
+<section class="page cons-blue">
+  <svg class="cons-svg" id="consBlue" width="1920" height="1080"></svg>
+  <div class="cons-txt">
+    <p class="mk"><b>Построение знака</b> · сетка 24 × 24</p>
+    <h2>Квадрат, линза и&nbsp;ручка под&nbsp;45°</h2>
+    <ul>
+      <li><b>Квадрат 24 × 24</b> радиус углов 3</li>
+      <li><b>Линза r 8,8</b> касается верха и правого края</li>
+      <li><b>Ручка 45°</b> толщина 3,4, из центра линзы</li>
+      <li><b>Блик r 1,6</b> найденная деталь</li>
+    </ul>
+  </div>
+  <div class="foot"><span>hideliv QC</span><span>03</span></div>
+</section>
+
+<!-- 3b -->
+<section class="page cons-grey">
+  <svg class="cons-svg" id="consGrey" width="1920" height="1080"></svg>
+  <div class="cons-txt">
+    <p class="mk"><b>Конструкция</b> · опорные точки</p>
+    <h2>Знак собирается из&nbsp;трёх простых форм</h2>
+    <p class="lead">Вырез сквозной: на любом фоне через лупу видно то, что под&nbsp;ней.</p>
+  </div>
+  <div class="foot"><span>hideliv QC</span><span>04</span></div>
+</section>
+
+<!-- 4 -->
+<section class="page">
+  <p class="mk"><b>Логотип на фонах сайта</b></p>
+  <h2>Читается на&nbsp;фото, синем и&nbsp;светлом</h2>
+  <div class="bgs">
+    <div class="bg" data-n="Первый экран · фото" style="background-image:linear-gradient(90deg,rgba(4,8,36,.55),rgba(4,8,36,.1)),url(../assets/img/hero-blue.webp)"><div class="lock" style="gap:20px" data-mark="#fff" data-size="64"><span style="color:#fff">hideliv</span></div></div>
+    <div class="bg" data-n="Калькулятор · фирменный синий" style="background:var(--blue)"><div class="lock" style="gap:20px" data-mark="#fff" data-size="64"><span style="color:#fff">hideliv</span></div></div>
+    <div class="bg light" data-n="Светлые блоки" style="background:var(--soft)"><div class="lock" style="gap:20px" data-mark="#2446D9" data-size="64"><span>hideliv</span></div></div>
+    <div class="bg" data-n="Тёмные блоки · цех" style="background-image:linear-gradient(rgba(6,10,30,.55),rgba(6,10,30,.55)),url(../assets/img/qc-inspector-dark.webp)"><div class="lock" style="gap:20px" data-mark="#2446D9" data-size="64"><span style="color:#fff">hideliv</span></div></div>
+  </div>
+  <div class="foot"><span>hideliv QC</span><span>05</span></div>
+</section>
+
+<!-- 5 -->
+<section class="page">
+  <p class="mk"><b>Цвет и шрифт</b></p>
+  <div class="sw">
+    <div style="background:var(--blue);color:#fff"><b>Синий hideliv</b>#2446D9 · кнопки, акценты, знак</div>
+    <div style="background:var(--navy);color:#fff"><b>Navy</b>#152A7C</div>
+    <div style="background:var(--ink);color:#fff"><b>Ink</b>#121315</div>
+    <div style="background:var(--soft)"><b>Soft</b>#F3F4F6</div>
+    <div style="background:#fff;border:1px solid var(--line)"><b>White</b>#FFFFFF</div>
+  </div>
+  <div class="type">
+    <div><div class="big">Onest</div><p>Один шрифт на всё. Заголовки — 400, логотип — 600.</p></div>
+    <div><p style="font-size:48px;color:var(--ink);letter-spacing:-.03em;line-height:1.1">Брак у поставщика исправляет поставщик.</p><p style="margin-top:20px">Текст 16–18px · подписи 13–14px · кнопки 15px, радиус 6</p></div>
+  </div>
+  <div class="foot"><span>hideliv QC</span><span>06</span></div>
+</section>
+
+<!-- 6 -->
+<section class="page">
+  <p class="mk"><b>Применение</b></p>
+  <h2>Сайт hideliv QC</h2>
+  <div class="apps">
+    <div class="shot"><img src="../_review/hero-1440x900.png" alt=""></div>
+    <div class="stack">
+      <div class="card" style="background:var(--ink)"><span class="mark" data-mark="#2446D9" data-size="140"></span></div>
+      <div class="card" style="background:var(--blue)"><div class="lock" style="gap:16px" data-mark="#fff" data-size="56"><span style="font-size:64px;color:#fff">hideliv</span></div></div>
+    </div>
+  </div>
+  <div class="foot"><span>hideliv QC</span><span>07</span></div>
+</section>
+
+<script>
+// знак в каждый узел с data-mark: цвет квадрата и размер
+const tpl = document.getElementById('mk').innerHTML;
+let n = 0;
+const mark = (fill, size) => tpl.replace(/id="M"/, `id="M${++n}"`).replace(/url\(#M\)/, `url(#M${n})`).replace('fill="F"', `fill="${fill}"`).replace('<svg ', `<svg width="${size}" height="${size}" `);
+document.querySelectorAll('[data-mark]').forEach(el => {
+  const html = mark(el.dataset.mark, el.dataset.size);
+  if (el.classList.contains('lock')) el.insertAdjacentHTML('afterbegin', html); else el.innerHTML = html;
+});
+
+// построение во всю страницу: знак 24 ед., сетка и опорные точки в px
+function construct(svgId, theme){
+  const svg = document.getElementById(svgId), W = 1920, H = 1080, U = 30, X0 = 1080, Y0 = 180;
+  const px = x => X0 + x*U, py = y => Y0 + y*U;
+  const dark = theme === 'blue';
+  const line = dark ? 'rgba(8,18,70,.38)' : 'rgba(18,19,21,.22)', key = dark ? 'rgba(8,18,70,.7)' : 'rgba(18,19,21,.45)';
+  const pt = dark ? '#0A1347' : '#121315';
+  let o = `<defs><pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#C9CBCF"/><line x1="0" y1="0" x2="0" y2="10" stroke="#9EA2A8" stroke-width="3"/></pattern>
+    <mask id="mk-${svgId}"><rect x="${px(0)}" y="${py(0)}" width="${24*U}" height="${24*U}" rx="${3*U}" fill="#fff"/><g fill="#000"><circle cx="${px(15.2)}" cy="${py(8.8)}" r="${8.8*U}"/><path d="M${px(16.4)} ${py(10)} L${px(14)} ${py(7.6)} L${px(-1.2)} ${py(22.8)} L${px(1.2)} ${py(25.2)}Z"/></g><circle cx="${px(11.4)}" cy="${py(5.4)}" r="${1.6*U}" fill="#fff"/></mask></defs>`;
+  // знак
+  o += `<rect x="${px(0)}" y="${py(0)}" width="${24*U}" height="${24*U}" rx="${3*U}" fill="${dark ? '#F4F5F7' : 'url(#hatch)'}" mask="url(#mk-${svgId})"/>`;
+  if (!dark) o += `<rect x="${px(0)}" y="${py(0)}" width="${24*U}" height="${24*U}" rx="${3*U}" fill="none" stroke="${pt}" stroke-width="1.5" mask="url(#mk-${svgId})"/>`;
+  // сетка во всю страницу: шаг 3 ед. + ключевые линии
+  const xs = new Set([0,3,6,6.4,9,12,15,15.2,18,21,24,27,-3,-6,-9,-12]), ys = new Set([0,3,6,8.8,9,12,15,17.6,18,21,24,-3,27,30]);
+  for (let k = -40; k <= 40; k += 3) { xs.add(k); ys.add(k); }
+  xs.forEach(x => { const X = px(x); if (X >= 0 && X <= W) o += `<line x1="${X}" y1="0" x2="${X}" y2="${H}" stroke="${[0,24,15.2,6.4].includes(x) ? key : line}" stroke-width="1"/>`; });
+  ys.forEach(y => { const Y = py(y); if (Y >= 0 && Y <= H) o += `<line x1="0" y1="${Y}" x2="${W}" y2="${Y}" stroke="${[0,24,8.8,17.6].includes(y) ? key : line}" stroke-width="1"/>`; });
+  // диагонали 45° по краям ручки и через центр линзы
+  [[14,7.6],[16.4,10],[15.2,8.8],[24,0]].forEach(([x,y]) => { const a = px(x)+py(y); o += `<line x1="${a}" y1="0" x2="${a - H}" y2="${H}" stroke="${key}" stroke-width="1"/>`; });
+  o += `<line x1="${px(0)-py(0)}" y1="0" x2="${px(0)-py(0)+H}" y2="${H}" stroke="${line}" stroke-width="1"/>`;
+  // окружности построения
+  const circ = (x,y,r,dash) => o += `<circle cx="${px(x)}" cy="${py(y)}" r="${r*U}" fill="none" stroke="${key}" stroke-width="1" ${dash ? 'stroke-dasharray="4 4"' : ''}/>`;
+  circ(15.2,8.8,8.8); circ(11.4,5.4,1.6); circ(12,12,12,1); circ(15.2,8.8,4.4,1);
+  [[3,3],[21,3],[3,21],[21,21]].forEach(([x,y]) => circ(x,y,3,1));
+  // опорные точки
+  const P = [[3,0],[21,0],[24,3],[24,21],[21,24],[3,24],[0,21.6],[2.4,24],[0,3],[15.2,0],[24,8.8],[6.4,8.8],[15.2,17.6],[15.2,8.8],[7.894,13.706],[10.294,16.106],[11.4,5.4]];
+  P.forEach(([x,y]) => o += `<rect x="${px(x)-5}" y="${py(y)-5}" width="10" height="10" fill="${pt}"/>`);
+  // размеры
+  const lab = (x,y,t) => o += `<text x="${px(x)}" y="${py(y)}" font-family="Onest" font-size="18" fill="${dark ? '#fff' : '#121315'}" opacity=".85">${t}</text>`;
+  lab(10.6,-0.7,'r 8,8'); lab(24.5,12.4,'24'); lab(11.2,-1.9+5.4,'r 1,6'); lab(0.6,26,'45°'); lab(-2.4,1.2,'r 3');
+  svg.innerHTML = o;
+}
+construct('consBlue','blue'); construct('consGrey','grey');
+
+// (старое построение)
+if(document.getElementById('cons')){
+const s = document.getElementById('cons');
+let g = '';
+for (let i = 0; i <= 24; i++) g += `<line x1="${i}" y1="0" x2="${i}" y2="24" stroke="#D5D8DE" stroke-width="${i % 6 ? .03 : .06}"/><line x1="0" y1="${i}" x2="24" y2="${i}" stroke="#D5D8DE" stroke-width="${i % 6 ? .03 : .06}"/>`;
+s.innerHTML = mark('#2446D9', 24).replace(/<svg[^>]*>/, '<g>').replace('</svg>', '</g>') + g.replace(/#D5D8DE/g,'rgba(120,130,150,.45)') +
+  `<circle cx="15.2" cy="8.8" r="8.8" fill="none" stroke="#E5484D" stroke-width=".08" stroke-dasharray=".3 .2"/>
+   <line x1="15.2" y1="8.8" x2="0" y2="24" stroke="#E5484D" stroke-width=".08" stroke-dasharray=".3 .2"/>
+   <circle cx="15.2" cy="8.8" r=".25" fill="#E5484D"/><circle cx="11.4" cy="5.4" r="1.6" fill="none" stroke="#E5484D" stroke-width=".08"/>
+   <rect x="0" y="0" width="24" height="24" rx="3" fill="none" stroke="#E5484D" stroke-width=".08" stroke-dasharray=".3 .2"/>
+   <text x="15.2" y="-.6" font-size=".9" fill="#E5484D" text-anchor="middle" font-family="Onest">r 8.8</text>
+   <text x="24.4" y="12" font-size=".9" fill="#E5484D" font-family="Onest">24</text>
+   <text x="3.2" y="19.4" font-size=".9" fill="#E5484D" font-family="Onest" transform="rotate(-45 3.2 19.4)">45°</text>`;
+}
+</script>
+</body>
+</html>

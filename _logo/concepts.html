@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>hideliv — концепты логотипа</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;600;700&display=swap">
+<style>
+/* 6 концептов логотипа hideliv: каждый на тёмном и на светлом фоне */
+:root{--blue:#2446D9;--ink:#151617;--dark:#0B0D12}
+*{box-sizing:border-box}
+body{margin:0;background:#E9EAEC;font-family:Onest,sans-serif;color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding:16px;width:1440px}
+.card{border-radius:12px;overflow:hidden;background:#fff}
+.cap{display:flex;gap:10px;align-items:baseline;padding:14px 20px;font-size:14px}
+.cap b{font-weight:600}
+.cap span{color:#6B7079}
+.row{display:grid;grid-template-columns:1fr 1fr}
+.pane{height:200px;display:grid;place-items:center}
+.pane.d{background:var(--dark);color:#fff;--fg:#fff}
+.pane.l{background:#F6F6F7;color:var(--ink);--fg:#151617}
+.wm{font-weight:600;font-size:52px;letter-spacing:-.035em;line-height:1;display:inline-flex;align-items:center}
+.lock{display:inline-flex;align-items:center;gap:14px}
+
+/* 1 — i-лупа */
+.c1 .i{position:relative;display:inline-block}
+.c1 .lens{position:absolute;left:50%;top:-6px;width:22px;height:22px;margin-left:-11px;border:4px solid var(--blue);border-radius:50%}
+.c1 .lens::after{content:"";position:absolute;right:-7px;bottom:-7px;width:9px;height:4px;background:var(--blue);transform:rotate(45deg);border-radius:2px}
+
+/* 2 — v как галочка */
+.c2 .v{display:inline-block;width:34px;height:40px;margin-left:2px;margin-top:10px}
+
+/* 4 — видоискатель */
+.c4 .vf{position:relative;padding:18px 26px}
+.c4 .vf i{position:absolute;width:16px;height:16px;border:3px solid var(--blue)}
+.c4 .vf i:nth-child(1){left:0;top:0;border-right:0;border-bottom:0}
+.c4 .vf i:nth-child(2){right:0;top:0;border-left:0;border-bottom:0}
+.c4 .vf i:nth-child(3){left:0;bottom:0;border-right:0;border-top:0}
+.c4 .vf i:nth-child(4){right:0;bottom:0;border-left:0;border-top:0}
+.c4 .vf .dot{position:absolute;right:10px;top:10px;width:6px;height:6px;border-radius:50%;background:#E5484D}
+
+/* 5 — печать */
+.c5 svg text{font-family:Onest;font-weight:600}
+</style>
+</head>
+<body>
+<div class="grid">
+
+  <section class="card c1">
+    <div class="cap"><b>1 · i-лупа</b><span>точка над i — линза инспектора</span></div>
+    <div class="row">
+      <div class="pane d"><span class="wm">h<span class="i">ı<i class="lens"></i></span>deliv</span></div>
+      <div class="pane l"><span class="wm">h<span class="i">ı<i class="lens"></i></span>deliv</span></div>
+    </div>
+  </section>
+
+  <section class="card c2">
+    <div class="cap"><b>2 · v-галочка</b><span>последняя буква — «проверено»</span></div>
+    <div class="row">
+      <div class="pane d"><span class="wm">hideli<svg class="v" viewBox="0 0 34 40"><path d="M3 20 L13 32 L31 4" fill="none" stroke="#2446D9" stroke-width="7.5" stroke-linecap="square" stroke-linejoin="miter"/></svg></span></div>
+      <div class="pane l"><span class="wm">hideli<svg class="v" viewBox="0 0 34 40"><path d="M3 20 L13 32 L31 4" fill="none" stroke="#2446D9" stroke-width="7.5" stroke-linecap="square" stroke-linejoin="miter"/></svg></span></div>
+    </div>
+  </section>
+
+  <section class="card c3">
+    <div class="cap"><b>3 · hide → reveal</b><span>знак «до / после»: скрытое становится видно</span></div>
+    <div class="row">
+      <div class="pane d"><span class="lock">
+        <svg width="54" height="54" viewBox="0 0 54 54"><rect x="1.5" y="1.5" width="51" height="51" rx="10" fill="none" stroke="#fff" stroke-width="3"/><path d="M1.5 52.5 L52.5 1.5 L52.5 42.5 Q52.5 52.5 42.5 52.5 Z" fill="#2446D9"/><path d="M14 14h6v10h14V14h6v26h-6V30H20v10h-6z" fill="#fff"/></svg>
+        <span class="wm">hideliv</span></span></div>
+      <div class="pane l"><span class="lock">
+        <svg width="54" height="54" viewBox="0 0 54 54"><rect x="1.5" y="1.5" width="51" height="51" rx="10" fill="none" stroke="#151617" stroke-width="3"/><path d="M1.5 52.5 L52.5 1.5 L52.5 42.5 Q52.5 52.5 42.5 52.5 Z" fill="#2446D9"/><path d="M14 14h6v10h14V14h6v26h-6V30H20v10h-6z" fill="#151617"/><path d="M34 26.5V30H20v10h-6v-.5L41.5 12z" fill="#fff" opacity="0"/></svg>
+        <span class="wm">hideliv</span></span></div>
+    </div>
+  </section>
+
+  <section class="card c4">
+    <div class="cap"><b>4 · видоискатель</b><span>рамка фокуса как на фото дефекта в отчёте</span></div>
+    <div class="row">
+      <div class="pane d"><span class="vf"><i></i><i></i><i></i><i></i><span class="dot"></span><span class="wm">hideliv</span></span></div>
+      <div class="pane l"><span class="vf"><i></i><i></i><i></i><i></i><span class="dot"></span><span class="wm">hideliv</span></span></div>
+    </div>
+  </section>
+
+  <section class="card c5">
+    <div class="cap"><b>5 · пломба</b><span>штамп «проверено» на партии + слово</span></div>
+    <div class="row">
+      <div class="pane d"><span class="lock">
+        <svg width="76" height="76" viewBox="0 0 100 100"><defs><path id="r1" d="M50 50 m-36 0 a36 36 0 1 1 72 0 a36 36 0 1 1 -72 0"/></defs>
+          <circle cx="50" cy="50" r="47" fill="none" stroke="#2446D9" stroke-width="3"/><circle cx="50" cy="50" r="27" fill="#2446D9"/>
+          <text font-size="10.5" letter-spacing="2.6" fill="#fff"><textPath href="#r1">QUALITY · INSPECTED · QUALITY · INSPECTED ·</textPath></text>
+          <path d="M39 51l7 7 15-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="wm">hideliv</span></span></div>
+      <div class="pane l"><span class="lock">
+        <svg width="76" height="76" viewBox="0 0 100 100"><defs><path id="r2" d="M50 50 m-36 0 a36 36 0 1 1 72 0 a36 36 0 1 1 -72 0"/></defs>
+          <circle cx="50" cy="50" r="47" fill="none" stroke="#2446D9" stroke-width="3"/><circle cx="50" cy="50" r="27" fill="#2446D9"/>
+          <text font-size="10.5" letter-spacing="2.6" fill="#151617"><textPath href="#r2">QUALITY · INSPECTED · QUALITY · INSPECTED ·</textPath></text>
+          <path d="M39 51l7 7 15-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="wm">hideliv</span></span></div>
+    </div>
+  </section>
+
+  <section class="card c6">
+    <div class="cap"><b>6 · маршрут из h</b><span>ножка h уходит в стрелку: фабрика → вы</span></div>
+    <div class="row">
+      <div class="pane d"><span class="lock">
+        <svg width="56" height="56" viewBox="0 0 56 56"><path d="M8 4h9v18h10a12 12 0 0 1 12 12v4h-9v-4a3 3 0 0 0-3-3H17v21H8z" fill="#fff"/><path d="M30 42h9v1l9-9 6 6-16 14H30z" fill="#2446D9"/><path d="M41 30l11-11M44 19h8v8" fill="none" stroke="#2446D9" stroke-width="0"/></svg>
+        <span class="wm">hideliv</span></span></div>
+      <div class="pane l"><span class="lock">
+        <svg width="56" height="56" viewBox="0 0 56 56"><path d="M8 4h9v18h10a12 12 0 0 1 12 12v4h-9v-4a3 3 0 0 0-3-3H17v21H8z" fill="#151617"/><path d="M30 42h9v1l9-9 6 6-16 14H30z" fill="#2446D9"/></svg>
+        <span class="wm">hideliv</span></span></div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
