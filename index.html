@@ -858,23 +858,38 @@
   </div>
 </dialog>
 
-<dialog class="dialog" id="brief-dialog" aria-labelledby="brief-title">
+<dialog class="dialog dialog-brief" id="brief-dialog" aria-labelledby="brief-title">
   <button class="dialog-close" data-close aria-label="Закрыть"><svg class="ico"><use href="#i-close"/></svg></button>
-  <div class="brief-doc">
-            <div class="doc-head"><div class="dlg-title" id="brief-title">Бриф на проверку</div><p class="muted">Термостакан · 3 000 шт.</p></div>
-            <p class="doc-label">Ваши требования</p>
-            <ul class="checks">
-              <li><span class="cb"><svg class="ico"><use href="#i-check"/></svg></span>Внешний вид корпуса</li>
-              <li><span class="cb"><svg class="ico"><use href="#i-check"/></svg></span>Объём и размеры</li>
-              <li><span class="cb"><svg class="ico"><use href="#i-check"/></svg></span>Маркировка и упаковка</li>
-            </ul>
-            <p class="doc-label accent">Добавили мы — с учётом рисков категории</p>
-            <ul class="checks checks-blue">
-              <li><span class="cb"><svg class="ico"><use href="#i-check"/></svg></span>Герметичность крышки</li>
-              <li><span class="cb"><svg class="ico"><use href="#i-check"/></svg></span>Удержание тепла</li>
-              <li><span class="cb"><svg class="ico"><use href="#i-check"/></svg></span>Посадка крышки и уплотнителя</li>
-            </ul>
-          </div>
+  <div class="bd-head">
+    <div>
+      <p class="bd-label">Пример брифа</p>
+      <div class="dlg-title" id="brief-title">Бриф на проверку</div>
+      <p class="bd-lead">Вы описываете товар — мы добавляем проверки скрытых рисков вашей категории.</p>
+    </div>
+    <span class="bd-chip">Термостакан · 3 000 шт.</span>
+  </div>
+  <div class="bd-cols">
+    <div class="bd-col">
+      <p class="bd-col-title">Ваши требования</p>
+      <ul class="checks">
+        <li><span class="cb"><svg class="ico"><use href="#i-check"/></svg></span>Внешний вид корпуса</li>
+        <li><span class="cb"><svg class="ico"><use href="#i-check"/></svg></span>Объём и размеры</li>
+        <li><span class="cb"><svg class="ico"><use href="#i-check"/></svg></span>Маркировка и упаковка</li>
+      </ul>
+    </div>
+    <div class="bd-col bd-col--we">
+      <p class="bd-col-title">Добавили мы — с учётом рисков категории</p>
+      <ul class="checks checks-blue">
+        <li><span class="cb"><svg class="ico"><use href="#i-check"/></svg></span>Герметичность крышки</li>
+        <li><span class="cb"><svg class="ico"><use href="#i-check"/></svg></span>Удержание тепла</li>
+        <li><span class="cb"><svg class="ico"><use href="#i-check"/></svg></span>Посадка крышки и уплотнителя</li>
+      </ul>
+    </div>
+  </div>
+  <div class="bd-actions">
+    <button class="btn btn-blue" data-lead="inspection">Заказать инспекцию</button>
+    <button class="bd-close-link" type="button" data-close>Закрыть</button>
+  </div>
 </dialog>
 
 <dialog class="dialog" id="countries" aria-labelledby="countries-title">

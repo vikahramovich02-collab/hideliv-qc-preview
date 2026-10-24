@@ -126,9 +126,11 @@
     const d = document.getElementById(id);
     if (!d) return;
     $$('dialog[open]').forEach(x => x !== d && x.close());
-    if (!d.open) d.showModal();
+    if (!d.open) { d.showModal(); d.setAttribute('tabindex', '-1'); d.focus({ preventScroll: true }); }
+    document.body.classList.add('dlg-open');
   };
   $$('[data-open-dialog]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); openDialog(b.dataset.openDialog); }));
+  $$('dialog').forEach(d => d.addEventListener('close', () => { if (!$$('dialog[open]').length) document.body.classList.remove('dlg-open'); }));
   $$('dialog').forEach(d => {
     d.addEventListener('click', e => {
       if (e.target.closest('[data-close]')) d.close();
