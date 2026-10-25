@@ -853,4 +853,4 @@ body.dlg-open .header{visibility:hidden}
 }
 
 /* мобилка: карточка-слайдер в hero не нужна */
-@media (max-width:640px){.hero-slider{display:none!important}}
+@media (max-width:960px){.hero-slider{display:none!important}}
