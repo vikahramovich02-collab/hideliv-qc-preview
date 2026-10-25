@@ -851,3 +851,6 @@ body.dlg-open .header{visibility:hidden}
   .seg-brand .logo{min-height:44px}
   .range{height:32px}
 }
+
+/* мобилка: карточка-слайдер в hero не нужна */
+@media (max-width:640px){.hero-slider{display:none!important}}
