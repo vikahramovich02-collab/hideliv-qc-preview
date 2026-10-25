@@ -122,7 +122,7 @@ body:is([data-hdr="blue"],[data-hdr="dark"]) .header:not(.menu-open) .seg-dark:h
 .svc:hover i::before{opacity:0}
 .svc:hover i::after{opacity:1}
 .m-svc{display:flex;flex-direction:column;gap:8px;padding:8px 0 16px}
-.m-svc .svc{background:#F3F3F3;min-height:60px}
+.m-svc .svc{display:flex;padding:14px 16px;border-top:0;background:#F3F3F3;min-height:60px}
 .m-svc .svc-name{font-size:16px}
 .services-col{display:flex;flex-direction:column}
 .services-label{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-bottom:8px}
@@ -824,11 +824,13 @@ body.dlg-open .header{visibility:hidden}
   .header::before{display:none}
   .header-row{height:44px}
   .seg{height:44px}
-  .seg-brand{background:#fff!important;color:#151617!important;padding:0 12px!important;border-radius:6px;text-shadow:none!important}
-  body:is([data-hdr="dark"],[data-hdr="blue"]) .header:not(.menu-open) .seg-brand .logo-mark{color:#2446D9}
-  .seg-brand .logo-mark{color:#2446D9!important}
+  .seg-brand{background:none!important;padding:0!important;text-shadow:none!important}
+  /* меню открыто: шапка без blur, иначе fixed-меню считает высоту от шапки и схлопывается */
+  .header.menu-open{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
   .burger{width:44px}
-  .mobile-menu{inset:60px 0 0;display:flex;flex-direction:column}
+  .mobile-menu{position:fixed;top:60px;left:0;right:0;bottom:0;height:calc(100dvh - 60px);border-radius:0;display:flex;flex-direction:column;overscroll-behavior:contain;padding:0 0 24px}
+  .mobile-menu .container{padding:0 16px}
+  .m-link,.m-services summary{font-size:20px;padding:16px 0}
   .mobile-menu .container{flex:1}
   .cases-nav{flex-wrap:nowrap;flex-direction:column;align-items:stretch!important;gap:12px}
   .cases-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:4px 16px;border-radius:0;background:none}

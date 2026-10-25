@@ -23,7 +23,7 @@ h2{font-weight:400;font-size:64px;letter-spacing:-.035em;line-height:1.05;margin
 .lock span{font-weight:600;letter-spacing:-.035em;line-height:1}
 
 /* 1 обложка */
-.cover{background:var(--blue);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.cover{background:linear-gradient(90deg,rgba(6,12,52,.82) 0%,rgba(6,12,52,.45) 45%,rgba(6,12,52,0) 75%),url(../assets/video/hero-woman-poster.jpg) right center/cover,var(--blue);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
 .cover .mk{color:rgba(255,255,255,.7)}.cover .mk::before{background:#fff}.cover .mk b{color:#fff}
 .cover .foot{color:rgba(255,255,255,.7)}
 
@@ -76,6 +76,17 @@ h2{font-weight:400;font-size:64px;letter-spacing:-.035em;line-height:1.05;margin
 .cons-txt li{border-top:1px solid rgba(255,255,255,.25);padding:18px 0;font-size:20px;color:rgba(255,255,255,.75)}
 .cons-txt li b{color:#fff;font-weight:500;margin-right:12px}
 .cons-blue .foot{color:rgba(255,255,255,.7)}
+
+.apps-page{background:#E7E8EA}
+.screens{position:absolute;left:112px;right:112px;top:236px;bottom:110px;display:block;overflow:hidden}
+.msheet{position:absolute;left:112px;right:112px;top:250px;bottom:112px;display:flex;justify-content:center}
+.msheet img{height:100%;width:auto;border-radius:10px;display:block}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:min-content;gap:12px;align-content:start}
+.sgrid img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;border-radius:8px;display:block;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.phones{display:flex;gap:16px;align-items:center;justify-content:center}
+.phone{width:160px;aspect-ratio:390/844;border-radius:26px;background:#121315;padding:6px;box-shadow:0 18px 40px rgba(12,20,60,.18)}
+.phone:nth-child(2){transform:translateY(-28px)}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:20px;display:block}
 </style>
 </head>
 <body>
@@ -162,17 +173,21 @@ h2{font-weight:400;font-size:64px;letter-spacing:-.035em;line-height:1.05;margin
 </section>
 
 <!-- 6 -->
-<section class="page">
+<section class="page apps-page">
   <p class="mk"><b>Применение</b></p>
   <h2>Сайт hideliv QC</h2>
-  <div class="apps">
-    <div class="shot"><img src="../_review/hero-1440x900.png" alt=""></div>
-    <div class="stack">
-      <div class="card" style="background:var(--ink)"><span class="mark" data-mark="#2446D9" data-size="140"></span></div>
-      <div class="card" style="background:var(--blue)"><div class="lock" style="gap:16px" data-mark="#fff" data-size="56"><span style="font-size:64px;color:#fff">hideliv</span></div></div>
-    </div>
+  <div class="screens">
+    <div class="sgrid"><img src="shots/d00.png" alt=""><img src="shots/d01.png" alt=""><img src="shots/d02.png" alt=""><img src="shots/d03.png" alt=""><img src="shots/d04.png" alt=""><img src="shots/d05.png" alt=""><img src="shots/d06.png" alt=""><img src="shots/d07.png" alt=""><img src="shots/d08.png" alt=""><img src="shots/d09.png" alt=""><img src="shots/d10.png" alt=""><img src="shots/d11.png" alt=""></div>
   </div>
   <div class="foot"><span>hideliv QC</span><span>07</span></div>
+</section>
+
+<!-- 8 -->
+<section class="page apps-page">
+  <p class="mk"><b>Применение</b> · мобильная версия</p>
+  <h2>На телефоне</h2>
+  <div class="msheet"><img src="shots/mobile-sheet.jpg" alt=""></div>
+  <div class="foot"><span>hideliv QC</span><span>08</span></div>
 </section>
 
 <script>

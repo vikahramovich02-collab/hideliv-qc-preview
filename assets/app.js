@@ -115,6 +115,7 @@
     burger.querySelector('use').setAttribute('href', open ? '#i-close' : '#i-menu');
     mMenu.hidden = !open;
     $('.header').classList.toggle('menu-open', open);
+    document.documentElement.style.overflow = open ? 'hidden' : '';
     document.body.style.overflow = open ? 'hidden' : '';
   };
   burger.addEventListener('click', () => setMenu(mMenu.hidden));
