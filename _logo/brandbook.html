@@ -116,28 +116,19 @@ h2{font-weight:400;font-size:64px;letter-spacing:-.035em;line-height:1.05;margin
 </section>
 
 <!-- 3 -->
-<section class="page cons-blue">
-  <svg class="cons-svg" id="consBlue" width="1920" height="1080"></svg>
+<section class="page cons-grey">
+  <svg class="cons-svg" id="consGrey" width="1920" height="1080"></svg>
   <div class="cons-txt">
-    <p class="mk"><b>Построение знака</b> · сетка 24 × 24</p>
-    <h2>Квадрат, линза и&nbsp;ручка под&nbsp;45°</h2>
-    <ul>
-      <li><b>Квадрат 24 × 24</b> радиус углов 3</li>
-      <li><b>Линза r 8,8</b> касается верха и правого края</li>
-      <li><b>Ручка 45°</b> толщина 3,4, из центра линзы</li>
-      <li><b>Блик r 1,6</b> найденная деталь</li>
-    </ul>
+    <p class="mk"><b>Конструкция</b> · опорные точки</p>
   </div>
   <div class="foot"><span>hideliv QC</span><span>03</span></div>
 </section>
 
 <!-- 3b -->
-<section class="page cons-grey">
-  <svg class="cons-svg" id="consGrey" width="1920" height="1080"></svg>
+<section class="page cons-blue">
+  <svg class="cons-svg" id="consBlue" width="1920" height="1080"></svg>
   <div class="cons-txt">
-    <p class="mk"><b>Конструкция</b> · опорные точки</p>
-    <h2>Знак собирается из&nbsp;трёх простых форм</h2>
-    <p class="lead">Вырез сквозной: на любом фоне через лупу видно то, что под&nbsp;ней.</p>
+    <p class="mk"><b>Построение логотипа</b> · знак + надпись</p>
   </div>
   <div class="foot"><span>hideliv QC</span><span>04</span></div>
 </section>
@@ -201,8 +192,18 @@ document.querySelectorAll('[data-mark]').forEach(el => {
 });
 
 // построение во всю страницу: знак 24 ед., сетка и опорные точки в px
-function construct(svgId, theme){
-  const svg = document.getElementById(svgId), W = 1920, H = 1080, U = 30, X0 = 1080, Y0 = 180;
+function construct(svgId, theme, opt = {}){
+  const svg = document.getElementById(svgId), W = 1920, H = 1080, U = opt.U || 30;
+  // надпись: ширина и высоты букв из canvas, чтобы сетка легла по реальным глифам
+  let word = null;
+  if (opt.word) {
+    const fs = 24*U, c = document.createElement('canvas').getContext('2d');
+    c.font = `600 ${fs}px Onest`; c.letterSpacing = `${-.035*fs}px`;
+    const m = c.measureText('hideliv'), asc = m.actualBoundingBoxAscent, xh = c.measureText('x').actualBoundingBoxAscent;
+    word = { fs, w: opt.w || m.width, asc, xh, gap: 14/52*fs };
+  }
+  const total = 24*U + (word ? word.gap + word.w : 0);
+  const X0 = opt.center ? Math.round((W - total)/2) : 1080, Y0 = Math.round((H - 24*U)/2);
   const px = x => X0 + x*U, py = y => Y0 + y*U;
   const dark = theme === 'blue';
   const line = dark ? 'rgba(8,18,70,.38)' : 'rgba(18,19,21,.22)', key = dark ? 'rgba(8,18,70,.7)' : 'rgba(18,19,21,.45)';
@@ -229,10 +230,24 @@ function construct(svgId, theme){
   P.forEach(([x,y]) => o += `<rect x="${px(x)-5}" y="${py(y)-5}" width="10" height="10" fill="${pt}"/>`);
   // размеры
   const lab = (x,y,t) => o += `<text x="${px(x)}" y="${py(y)}" font-family="Onest" font-size="18" fill="${dark ? '#fff' : '#121315'}" opacity=".85">${t}</text>`;
-  lab(10.6,-0.7,'r 8,8'); lab(24.5,12.4,'24'); lab(11.2,-1.9+5.4,'r 1,6'); lab(0.6,26,'45°'); lab(-2.4,1.2,'r 3');
+  lab(10.6,-0.7,'r 8,8'); lab(11.2,-1.9+5.4,'r 1,6'); lab(0.6,26,'45°'); lab(-2.4,1.2,'r 3');
+  if (!word) lab(24.5,12.4,'24');
+  if (word) {
+    // надпись: базовая линия на уровне низа знака по центру высоты букв
+    const L = px(24) + word.gap, R = L + word.w, base = py(12) + word.asc/2, top = base - word.asc, xt = base - word.xh;
+    [L, R].forEach(X => o += `<line x1="${X}" y1="0" x2="${X}" y2="${H}" stroke="${key}" stroke-width="1"/>`);
+    [base, top, xt].forEach(Y => o += `<line x1="0" y1="${Y}" x2="${W}" y2="${Y}" stroke="${key}" stroke-width="1"/>`);
+    o += `<text x="${L}" y="${base}" font-family="Onest" font-weight="600" font-size="${word.fs}" letter-spacing="${-.035*word.fs}" fill="#F4F5F7" class="wm-text">hideliv</text>`;
+    [[L,top],[R,top],[L,base],[R,base],[L,xt],[R,xt]].forEach(([x,y]) => o += `<rect x="${x-5}" y="${y-5}" width="10" height="10" fill="${pt}"/>`);
+    const t = (x,y,s) => o += `<text x="${x}" y="${y}" font-family="Onest" font-size="18" fill="#fff" opacity=".85">${s}</text>`;
+    t(R+16, base-6, 'базовая линия'); t(R+16, xt-6, 'высота строчных'); t(R+16, top-6, 'выносные');
+    t((px(24)+L)/2-12, py(0)-14, `${(word.gap/U).toFixed(1).replace('.',',')}`);
+  }
   svg.innerHTML = o;
+  // второй проход: реальная ширина надписи из SVG, чтобы правая опорная линия легла по «v»
+  if (word && !opt.w) construct(svgId, theme, { ...opt, w: svg.querySelector('.wm-text').getBBox().width });
 }
-construct('consBlue','blue'); construct('consGrey','grey');
+document.fonts.ready.then(() => { construct('consGrey','grey',{center:true}); construct('consBlue','blue',{center:true,word:true,U:12}); });
 
 // (старое построение)
 if(document.getElementById('cons')){

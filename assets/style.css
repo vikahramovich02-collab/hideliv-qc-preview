@@ -757,7 +757,7 @@ body.dlg-open .header{visibility:hidden}
   .hero .lead{font-size:16px;margin-bottom:24px}
   .hero .actions{flex-direction:column;align-items:stretch;width:100%}
   .hero .insured{margin:4px 0 0}
-  .hero-inner{padding-top:84px;padding-bottom:16px;gap:16px}
+  .hero-inner{padding-top:clamp(112px,18svh,168px);padding-bottom:16px;gap:16px}
   .hero-bottom{gap:14px}
   .hero-slider{grid-template-columns:96px minmax(0,1fr);gap:12px;padding:8px;height:112px}
   .hs-media{width:96px;height:96px}
