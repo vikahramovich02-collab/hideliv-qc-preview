@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=1792921158">
+<link rel="stylesheet" href="assets/style.css?v=31">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -291,7 +291,6 @@
       <div class="actions hero-actions" data-reveal style="--d:.18s">
         <button class="btn btn-blue" data-lead="inspection">Заказать инспекцию</button>
         <button class="btn btn-glass" data-lead="consultation">Нужна консультация</button>
-        <p class="insured"><svg class="ico"><use href="#i-shield"/></svg>Ответственность застрахована</p>
       </div>
     <div class="hero-slider" role="region" aria-roledescription="карусель" aria-label="Примеры проверок" data-reveal style="--d:.3s">
       <div class="hs-media">
@@ -316,10 +315,10 @@
 <section class="facts" aria-label="Коротко о hideliv qc">
   <div class="container">
     <div class="facts-grid" data-reveal>
-      <div class="fact" style="--off:0px;--k:.15"><p class="fact-num"><span data-count="24">24</span></p><p class="fact-cap" title="Китай, Индия, Таиланд и Вьетнам">Выезд от 24 часов</p></div>
-      <div class="fact" style="--off:-130px;--k:.3"><p class="fact-num"><span data-count="72">72</span></p><p class="fact-cap" title="Турция, Пакистан, Бангладеш, Узбекистан, Киргизия, Казахстан, Россия и Беларусь">Выезд от 72 часов</p></div>
-      <div class="fact" style="--off:-260px;--k:.45"><p class="fact-num"><span data-count="500000">500 000</span><span class="rub"> ₽</span></p><p class="fact-cap">Ответственность застрахована</p></div>
-      <div class="fact" style="--off:-170px;--k:.35"><p class="fact-num"><span data-count="5000">5 000</span><span class="rub"> ₽</span></p><p class="fact-cap">Инспекция от 5 000 ₽</p></div>
+      <div class="fact"><p class="fact-num"><span data-count="24">24</span><span class="rub"> ч</span></p><p class="fact-cap">Выезд: Китай, Индия, Таиланд и Вьетнам</p></div>
+      <div class="fact"><p class="fact-num"><span data-count="72">72</span><span class="rub"> ч</span></p><p class="fact-cap">Выезд: Турция, Пакистан, Бангладеш, Узбекистан, Киргизия, Казахстан, Россия и Беларусь</p></div>
+      <div class="fact"><p class="fact-num"><span data-count="500000">500 000</span><span class="rub"> ₽</span></p><p class="fact-cap">Ответственность застрахована</p></div>
+      <div class="fact"><p class="fact-num"><span class="rub">от </span><span data-count="5000">5 000</span><span class="rub"> ₽</span></p><p class="fact-cap">Стоимость инспекции</p></div>
     </div>
   </div>
 </section>
@@ -499,54 +498,37 @@
 </section>
 
 <!-- 04 -->
-<section class="adv-sec" id="screen-04" data-header="light" aria-labelledby="h4-title">
-  <div class="container rep" data-header="light">
-    <div class="rep-text">
-      <p class="tag" data-reveal><i></i>04 / Как мы проверяем</p>
-      <h3 class="rep-title" data-reveal style="--d:.04s">Отчёт и решение</h3>
-      <p class="rep-lead" data-reveal style="--d:.08s">Заключение — на первой странице, бриф — в приложении.<br>Сразу видно, какие проверки выполнены и что обнаружено.</p>
-      <ol class="rep-steps" data-reveal style="--d:.12s">
-        <li class="rep-step is-active"><button type="button" data-rep-go="0" aria-controls="rep-photo" aria-expanded="true"><span class="rs-num">01</span><span class="rs-title">Умный бриф</span></button><div class="rs-body"><div><p>Вы описываете товар — мы добавляем проверки скрытых рисков вашей категории.</p><a class="rs-link" href="#" data-open-dialog="brief-dialog">Открыть бриф →</a></div></div><span class="rs-bar"><i></i></span></li>
-        <li class="rep-step"><button type="button" data-rep-go="1" aria-controls="rep-photo" aria-expanded="false"><span class="rs-num">02</span><span class="rs-title">Инспекция на фабрике</span></button><div class="rs-body"><div><p>Эксперт вашей категории проверяет выборку по AQL: фото, замеры, тесты.</p></div></div><span class="rs-bar"><i></i></span></li>
-        <li class="rep-step"><button type="button" data-rep-go="2" aria-controls="rep-photo" aria-expanded="false"><span class="rs-num">03</span><span class="rs-title">Отчёт и решение</span></button><div class="rs-body"><div><p>Заключение — на первой странице, бриф — в приложении.<br>Сразу видно, какие проверки выполнены и что обнаружено.</p></div></div><span class="rs-bar"><i></i></span></li>
-      </ol>
-      <div class="rep-actions" data-reveal style="--d:.16s">
-        <button class="btn btn-blue" data-lead="inspection">Заказать инспекцию</button>
-        <a class="rep-link" href="#" data-open-dialog="brief-dialog">Скачать отчёт</a>
+<section class="adv-sec" id="screen-04" data-header="dark" aria-labelledby="h4-title">
+  <div class="adv-bg" aria-hidden="true"><img src="assets/img/qc-inspector-dark.webp" alt="" width="1920" height="1086" loading="lazy"></div>
+  <div class="container adv-wrap">
+    <div class="adv-head">
+      <div>
+        <p class="tag tag-invert" data-reveal><i></i>04 / Как мы проверяем</p>
+        <h2 id="h4-title" class="adv-title" data-reveal style="--d:.06s">Найдём брак,<br>пока он не стал убытком</h2>
       </div>
-    </div>
-    <div class="rep-right" data-reveal style="--d:.1s">
-      <div class="rep-slider" id="rep-photo" role="region" aria-roledescription="карусель" aria-label="Этапы проверки">
-        <figure class="rep-slide is-active"><img src="assets/img/rep-1.webp" alt="Инспектор отмечает пункты бумажного брифа на проверку термостакана" width="1600" height="1200" loading="lazy"></figure>
-        <figure class="rep-slide"><img src="assets/img/rep-2.webp" alt="Фото дефекта с фабрики: метки на сколе покрытия и протечке крышки" width="1600" height="1200" loading="lazy"></figure>
-        <figure class="rep-slide"><img src="assets/img/rep-3.webp" alt="Отчёт об инспекции партии с фото дефектов и заключением" width="1600" height="1200" loading="lazy"></figure>
-        <span class="rep-chip" data-rep-chip>Шаг 1 · Умный бриф</span>
-      </div>
-      <div class="rep-under">
-        <p class="rep-cap" data-rep-cap>Бриф на проверку</p>
-        <div class="rep-ctrl"><span class="rep-count" data-rep-count>01 / 03</span>
-          <button class="rep-btn" type="button" data-rep="-1" aria-label="Предыдущий шаг"><svg class="ico"><use href="#i-prev"/></svg></button>
-          <button class="rep-btn" type="button" data-rep="1" aria-label="Следующий шаг"><svg class="ico"><use href="#i-next"/></svg></button></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="adv" data-header="dark">
-    <div class="adv-sticky">
-      <div class="adv-bg" aria-hidden="true"><img src="assets/img/qc-inspector-dark.webp" alt="" width="1920" height="1086" loading="lazy"></div>
-      <div class="adv-head">
-        <p class="tag tag-invert"><i></i>04 / Как мы проверяем</p>
-        <h2 id="h4-title" class="adv-title">Найдём брак,<br>пока он не стал убытком</h2>
+      <div class="adv-side" data-reveal style="--d:.12s">
         <p class="adv-intro">Три шага от вашего задания до решения по партии.</p>
+        <div class="adv-actions">
+          <button class="btn btn-blue" data-lead="inspection">Заказать инспекцию</button>
+          <a class="adv-link" href="#" data-open-dialog="brief-dialog">Скачать отчёт</a>
+        </div>
       </div>
     </div>
-    <div class="adv-cards">
-      <article class="adv-card" data-i="0"><span class="adv-dot"></span><svg class="adv-ico" viewBox="0 0 120 120" aria-hidden="true"><rect x="26" y="14" width="68" height="92" rx="3"/><path d="M46 14v-4h28v4"/><path d="M38 38l5 5 9-10M60 38h22M38 60l5 5 9-10M60 60h22M38 82l5 5 9-10M60 82h22"/></svg><div><h3>Умный бриф</h3><p>Вы описываете товар — мы добавляем проверки скрытых рисков вашей категории.</p></div></article>
-      <article class="adv-card" data-i="1"><span class="adv-dot"></span><svg class="adv-ico" viewBox="0 0 120 120" aria-hidden="true"><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="21"/><path d="M72 72l30 30M66 78l12-12"/><path d="M40 50h20M50 40v20"/></svg><div><h3>Инспекция на фабрике</h3><p>Эксперт вашей категории проверяет выборку по AQL: фото, замеры, тесты.</p></div></article>
-      <article class="adv-card" data-i="2"><span class="adv-dot"></span><svg class="adv-ico" viewBox="0 0 120 120" aria-hidden="true"><path d="M28 12h46l18 18v78H28z"/><path d="M74 12v18h18"/><path d="M40 92V74M54 92V62M68 92V68M82 92V54"/><path d="M38 50l12-10 12 6 18-14"/></svg><div><h3>Отчёт и решение</h3><p>Заключение — на первой странице, бриф — в приложении.<br>Сразу видно, какие проверки выполнены и что обнаружено.</p></div></article>
+    <div class="adv-cards" data-reveal style="--d:.16s">
+      <article class="adv-card">
+        <figure class="adv-media"><img src="assets/img/rep-1.webp" alt="Инспектор отмечает пункты бумажного брифа на проверку термостакана" width="1600" height="1200" loading="lazy"><span class="adv-step">Шаг 1</span></figure>
+        <div class="adv-body"><h3>Умный бриф</h3><p>Вы описываете товар — мы добавляем проверки скрытых рисков вашей категории.</p><a class="adv-more" href="#" data-open-dialog="brief-dialog">Открыть бриф →</a></div>
+      </article>
+      <article class="adv-card">
+        <figure class="adv-media"><img src="assets/img/rep-2.webp" alt="Фото дефекта с фабрики: метки на сколе покрытия и протечке крышки" width="1600" height="1200" loading="lazy"><span class="adv-step">Шаг 2</span></figure>
+        <div class="adv-body"><h3>Инспекция на фабрике</h3><p>Эксперт вашей категории проверяет выборку по AQL: фото, замеры, тесты.</p></div>
+      </article>
+      <article class="adv-card">
+        <figure class="adv-media"><img src="assets/img/rep-3.webp" alt="Отчёт об инспекции партии с фото дефектов и заключением" width="1600" height="1200" loading="lazy"><span class="adv-step">Шаг 3</span></figure>
+        <div class="adv-body"><h3>Отчёт и решение</h3><p>Заключение — на первой странице, бриф — в приложении. Сразу видно, какие проверки выполнены и что обнаружено.</p></div>
+      </article>
     </div>
   </div>
-
 </section>
 
 <!-- 05 -->
@@ -914,6 +896,6 @@
   <p class="muted">Вход в личный кабинет пока недоступен.</p>
 </dialog>
 
-<script src="assets/app.js?v=1792921158" defer></script>
+<script src="assets/app.js?v=31" defer></script>
 </body>
 </html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>hideliv qc — варианты экрана 04</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=31">
+<style>
+.vlabel{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--gutter);background:#151617;color:#fff;font-size:14px}
+.vlabel b{font-weight:500}
+.vlabel span{color:rgba(255,255,255,.6)}
+.vlabel a{color:#9DB2FF;text-decoration:none;white-space:nowrap}
+
+/* ---------- B: отчёт в центре, шаги вокруг ---------- */
+.vb{padding:var(--sec) 0;background:#F3F4F6}
+.vb-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:stretch}
+.vb-photo{position:relative;border-radius:10px;overflow:hidden;min-height:560px;background:#111}
+.vb-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vb-pin{position:absolute;display:flex;align-items:center;gap:8px;padding:8px 12px 8px 8px;border-radius:6px;background:#fff;font-size:14px;color:#151617;box-shadow:0 6px 24px rgba(0,0,0,.18)}
+.vb-pin i{display:grid;place-items:center;width:22px;height:22px;border-radius:4px;background:#2446D9;color:#fff;font-style:normal;font-size:12px}
+.vb-text h2{font-size:48px;line-height:1.08;font-weight:400;letter-spacing:-.025em;margin:20px 0 16px}
+.vb-text>p{font-size:17px;color:var(--muted);margin-bottom:32px}
+.vb-steps{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.vb-step{display:grid;grid-template-columns:88px minmax(0,1fr);gap:16px;align-items:center;padding:12px;border-radius:8px;background:#fff}
+.vb-step img{width:88px;height:66px;object-fit:cover;border-radius:6px}
+.vb-step h3{font-size:18px;font-weight:500;margin-bottom:2px}
+.vb-step p{font-size:14px;line-height:1.45;color:var(--muted)}
+.vb-actions{display:flex;align-items:center;gap:28px}
+
+/* ---------- C: три фото-панели, раскрываются ---------- */
+.vc{padding:var(--sec) 0;background:#fff}
+.vc-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,41.6667%);align-items:end;margin-bottom:40px}
+.vc-head h2{font-size:48px;line-height:1.08;font-weight:400;letter-spacing:-.025em;margin-top:20px}
+.vc-head p{font-size:17px;color:var(--muted);margin-bottom:20px}
+.vc-panels{display:flex;gap:12px;height:600px}
+.vc-panel{position:relative;flex:1;min-width:0;border-radius:10px;overflow:hidden;background:#111;color:#fff;transition:flex-grow .6s var(--ease);cursor:default}
+.vc-panel.is-open{flex-grow:2.4}
+.vc-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vc-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,16,46,0) 35%,rgba(6,16,46,.9) 100%)}
+.vc-body{position:absolute;left:24px;right:24px;bottom:24px;z-index:1}
+.vc-num{display:block;font-size:13px;color:rgba(255,255,255,.7);margin-bottom:8px}
+.vc-body h3{font-size:30px;line-height:1.1;font-weight:400;letter-spacing:-.02em}
+.vc-body p{max-width:420px;font-size:16px;line-height:1.5;color:rgba(255,255,255,.85);max-height:0;opacity:0;overflow:hidden;transition:max-height .5s var(--ease),opacity .4s,margin .4s}
+.vc-panel.is-open .vc-body p{max-height:140px;opacity:1;margin-top:12px}
+.vc-actions{display:flex;align-items:center;gap:28px;margin-top:32px}
+
+@media (max-width:960px){
+  .vb-grid,.vc-head{grid-template-columns:1fr;gap:24px}
+  .vb-photo{min-height:0;aspect-ratio:4/3}
+  .vb-text h2,.vc-head h2{font-size:34px}
+  .vc-panels{flex-direction:column;height:auto}
+  .vc-panel{flex:none;height:300px}
+  .vc-panel .vc-body p{max-height:140px;opacity:1;margin-top:8px}
+  .vb-actions,.vc-actions{flex-direction:column;align-items:stretch;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<div class="vlabel"><b>Вариант A — на основной странице</b><span>Тёмный блок, три шага с фото</span><a href="./#screen-04">Смотреть на сайте →</a></div>
+<div class="vlabel" style="position:static;background:#2446D9"><b>Ниже — варианты B и C для сравнения</b></div>
+
+<div class="vlabel"><b>Вариант B</b><span>Фото отчёта главное, шаги рядом — карточками</span><span></span></div>
+<section class="vb">
+  <div class="container vb-grid">
+    <div class="vb-photo">
+      <img src="assets/img/rep-3.webp" alt="Отчёт об инспекции партии с фото дефектов и заключением" width="1600" height="1200">
+      <span class="vb-pin" style="left:6%;top:10%"><i>1</i>Бриф в приложении</span>
+      <span class="vb-pin" style="right:6%;top:40%"><i>2</i>Фото, замеры, тесты</span>
+      <span class="vb-pin" style="left:10%;bottom:10%"><i>3</i>Заключение на первой странице</span>
+    </div>
+    <div class="vb-text">
+      <p class="tag"><i></i>04 / Как мы проверяем</p>
+      <h2>Найдём брак,<br>пока он не стал убытком</h2>
+      <p>Три шага от вашего задания до решения по партии.</p>
+      <div class="vb-steps">
+        <div class="vb-step"><img src="assets/img/rep-1.webp" alt=""><div><h3>Умный бриф</h3><p>Вы описываете товар — мы добавляем проверки скрытых рисков вашей категории.</p></div></div>
+        <div class="vb-step"><img src="assets/img/rep-2.webp" alt=""><div><h3>Инспекция на фабрике</h3><p>Эксперт вашей категории проверяет выборку по AQL: фото, замеры, тесты.</p></div></div>
+        <div class="vb-step"><img src="assets/img/rep-3.webp" alt=""><div><h3>Отчёт и решение</h3><p>Заключение — на первой странице, бриф — в приложении.</p></div></div>
+      </div>
+      <div class="vb-actions"><a class="btn btn-blue" href="./#screen-08">Заказать инспекцию</a><a class="rep-link" href="./#screen-04">Скачать отчёт</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="vlabel"><b>Вариант C</b><span>Три фото-панели, активная раскрывается (по наведению / сама по таймеру)</span><span></span></div>
+<section class="vc">
+  <div class="container">
+    <div class="vc-head">
+      <div><p class="tag"><i></i>04 / Как мы проверяем</p><h2>Найдём брак,<br>пока он не стал убытком</h2></div>
+      <p>Три шага от вашего задания до решения по партии.</p>
+    </div>
+    <div class="vc-panels">
+      <article class="vc-panel is-open"><img src="assets/img/rep-1.webp" alt="Инспектор отмечает пункты брифа"><div class="vc-body"><span class="vc-num">Шаг 1</span><h3>Умный бриф</h3><p>Вы описываете товар — мы добавляем проверки скрытых рисков вашей категории.</p></div></article>
+      <article class="vc-panel"><img src="assets/img/rep-2.webp" alt="Фото дефекта с фабрики"><div class="vc-body"><span class="vc-num">Шаг 2</span><h3>Инспекция на фабрике</h3><p>Эксперт вашей категории проверяет выборку по AQL: фото, замеры, тесты.</p></div></article>
+      <article class="vc-panel"><img src="assets/img/rep-3.webp" alt="Отчёт об инспекции"><div class="vc-body"><span class="vc-num">Шаг 3</span><h3>Отчёт и решение</h3><p>Заключение — на первой странице, бриф — в приложении. Сразу видно, какие проверки выполнены и что обнаружено.</p></div></article>
+    </div>
+    <div class="vc-actions"><a class="btn btn-blue" href="./#screen-08">Заказать инспекцию</a><a class="rep-link" href="./#screen-04">Скачать отчёт</a></div>
+  </div>
+</section>
+
+<script>
+(() => {
+  const ps = [...document.querySelectorAll('.vc-panel')]; let i = 0, hold = false;
+  const open = k => { i = k; ps.forEach((p, j) => p.classList.toggle('is-open', j === k)); };
+  ps.forEach((p, k) => { p.addEventListener('mouseenter', () => { hold = true; open(k); }); p.addEventListener('mouseleave', () => hold = false); });
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => { if (!hold) open((i + 1) % ps.length); }, 4000);
+})();
+</script>
+</body>
+</html>

@@ -261,6 +261,7 @@
     const idx = (i + sheets.length) % sheets.length;
     markActive(idx);
     const target = sheets[idx];
+    if (mqAcc.matches) { stack.scrollTo({ left: target.offsetLeft - stack.offsetLeft - parseFloat(getComputedStyle(stack).scrollPaddingLeft || 0), behavior: reduceMotion ? 'auto' : 'smooth' }); return; }
     if (isStatic()) { target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); return; }
     let y = stack.getBoundingClientRect().top + window.scrollY;
     for (let k = 0; k < idx; k++) y += sheets[k].offsetHeight; // flow height + margin (transform does not affect layout)
@@ -298,6 +299,15 @@
     const d = l.dataset.defect, f = $('#cv-defect');
     if (d && f) { f.value = d; f.dispatchEvent(new Event('input', { bubbles: true })); }
   }));
+  let swTick = false;
+  stack.addEventListener('scroll', () => {
+    if (!mqAcc.matches || swTick) return; swTick = true;
+    requestAnimationFrame(() => { swTick = false;
+      const x = stack.scrollLeft; let best = 0, d = 1e9;
+      sheets.forEach((sh, k) => { const dd = Math.abs(sh.offsetLeft - stack.offsetLeft - x); if (dd < d) { d = dd; best = k; } });
+      if (best !== caseIdx) markActive(best);
+    });
+  }, { passive: true });
   window.addEventListener('scroll', () => { if (!caseTick) { caseTick = true; requestAnimationFrame(caseFrame); } }, { passive: true });
   window.addEventListener('resize', caseLayout);
   (mqAcc.addEventListener ? mqAcc.addEventListener('change', caseLayout) : mqAcc.addListener(caseLayout));
@@ -524,26 +534,6 @@
   window.addEventListener('scroll', checkHdr, { passive: true });
   window.addEventListener('resize', checkHdr);
   checkHdr();
-
-  /* ---------- 04 Sticky advantages ---------- */
-  const adv = $('.adv');
-  const advCards = $$('.adv-card', adv);
-  const advTitle = $('.adv-title', adv);
-  const advBg = $('.adv-bg img', adv);
-  const mqNarrow = window.matchMedia('(max-width: 960px)');
-  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
-  const ease = t => 1 - Math.pow(1 - t, 3);
-  let advTick = false;
-  const advStatic = () => reduceMotion || mqNarrow.matches;
-  function advLayout() {
-    adv.classList.toggle('is-static', advStatic());
-    advFrame();
-  }
-  function advFrame() { advTick = false; /* cards now scroll in normal flow over the sticky background */ }
-  window.addEventListener('scroll', () => { if (!advTick) { advTick = true; requestAnimationFrame(advFrame); } }, { passive: true });
-  window.addEventListener('resize', advLayout);
-  (mqNarrow.addEventListener ? mqNarrow.addEventListener('change', advLayout) : mqNarrow.addListener(advLayout));
-  advLayout();
 
   /* ---------- Block 05 rows: «Подробнее» expands sub-items ---------- */
   $$('.row-more').forEach(b => b.addEventListener('click', () => {

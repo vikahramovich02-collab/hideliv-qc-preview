@@ -854,3 +854,90 @@ body.dlg-open .header{visibility:hidden}
 
 /* мобилка: карточка-слайдер в hero не нужна */
 @media (max-width:960px){.hero-slider{display:none!important}}
+
+/* ============ v3 — правки заказчика 31.10 ============ */
+/* 02 · цифры: компактная полоса вместо целого экрана */
+.facts{min-height:0;display:block;padding:56px 0;border-bottom:1px solid var(--line)}
+.facts-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;align-items:start}
+.fact{transform:none;will-change:auto;padding-top:20px}
+.fact::after{top:-4px;width:6px;height:6px}
+.fact-num{font-size:56px;margin-bottom:10px}
+.fact-num .rub{font-size:.5em}
+.fact-cap{font-size:15px;line-height:1.45;color:var(--muted);max-width:30ch}
+#screen-02{padding-top:var(--sec)}
+
+/* 04 · тёмный блок с фото шагов */
+.adv-sec{position:relative;overflow:hidden;padding:var(--sec) 0;background:#06102E;color:#fff}
+.adv-sec .adv-bg{position:absolute;inset:0 0 auto;height:560px;background:#06102E}
+.adv-sec .adv-bg img{width:100%;height:100%;object-fit:cover;object-position:70% 40%;filter:grayscale(1) contrast(1.1) brightness(1.5);opacity:.55}
+.adv-sec .adv-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,16,46,.2) 0%,#06102E 100%),#1E4FFF;background-blend-mode:normal;mix-blend-mode:normal;opacity:1}
+.adv-sec .adv-bg::after{background:linear-gradient(180deg,rgba(30,79,255,.35) 0%,rgba(6,16,46,.85) 70%,#06102E 100%)}
+.adv-wrap{position:relative;z-index:1}
+.adv-sec .adv-head{position:relative;inset:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,41.6667%);align-items:end;text-align:left;padding:0;margin-bottom:56px}
+.adv-sec .adv-head .tag{margin-bottom:20px}
+.adv-sec .adv-title{font-size:64px;line-height:1.05;max-width:none}
+.adv-side{display:flex;flex-direction:column;gap:24px;padding-bottom:6px}
+.adv-sec .adv-intro{margin:0;font-size:18px;color:var(--on-dark)}
+.adv-actions{display:flex;align-items:center;gap:28px}
+.adv-link{font-size:15px;color:#fff;text-decoration:none}
+.adv-link:hover{color:#9DB2FF}
+.adv-sec .adv-cards{margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;flex-direction:initial}
+.adv-sec .adv-card{width:auto;height:auto;margin:0;padding:12px;border-radius:10px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);display:flex;flex-direction:column;justify-content:flex-start;align-self:stretch}
+.adv-media{position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:#111}
+.adv-media img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.adv-card:hover .adv-media img{transform:scale(1.03)}
+.adv-step{position:absolute;left:12px;top:12px;padding:6px 10px;border-radius:6px;background:rgba(20,20,22,.55);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);font-size:13px;color:#fff}
+.adv-body{display:flex;flex-direction:column;gap:10px;padding:20px 12px 12px;flex:1}
+.adv-sec .adv-card h3{font-size:26px;line-height:1.15;margin:0}
+.adv-sec .adv-card p{font-size:16px;line-height:1.5;color:var(--on-dark);max-width:none}
+.adv-more{margin-top:auto;padding-top:8px;font-size:15px;color:#9DB2FF;text-decoration:none}
+.adv-more:hover{color:#fff}
+
+/* 05 · сетка карточек вместо высоких строк */
+#screen-05 .rows{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;border:0;align-items:start}
+#screen-05 .row{display:flex;flex-direction:column;gap:0;padding:0;border:0}
+#screen-05 .row+.row{border-top:0}
+#screen-05 .row-media{aspect-ratio:4/3;margin-bottom:20px}
+#screen-05 .row-body{display:flex;flex-direction:column;gap:16px}
+#screen-05 .row-top{gap:12px}
+#screen-05 .row-top>div{padding-right:0;gap:6px}
+#screen-05 .row-top h3{font-size:24px}
+#screen-05 .row-sub{font-size:15px}
+#screen-05 .row-more{position:static;align-self:flex-start;font-size:15px;text-underline-offset:4px;order:3}
+#screen-05 .row-chips{gap:6px}
+#screen-05 .row-chips li{font-size:13px;padding:6px 10px}
+#screen-05 .row-items{grid-template-columns:1fr;gap:14px;padding-top:4px}
+#screen-05 .row-items h4{font-size:14px;margin-bottom:2px}
+#screen-05 .row-items p{font-size:14px}
+#screen-05 .row-text{font-size:15px;color:var(--muted)}
+
+@media (max-width:1100px){
+  .adv-sec .adv-title{font-size:48px}
+  .fact-num{font-size:44px}
+  #screen-05 .rows{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 16px}
+}
+
+/* мобилка: короче, свайпы вместо простыней */
+@media (max-width:960px){
+  .facts{padding:40px 0}
+  .facts-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px}
+  .fact-num{font-size:36px}
+  .fact-cap{font-size:13px}
+  .adv-sec .adv-head{grid-template-columns:1fr;gap:20px;margin-bottom:32px}
+  .adv-sec .adv-bg{height:420px}
+  .snap-x,.adv-sec .adv-cards,#screen-05 .rows,.cases-stack.is-static{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--gutter);margin:0 calc(var(--gutter) * -1);padding:0 var(--gutter) 4px;gap:12px;scrollbar-width:none;overscroll-behavior-x:contain}
+  .adv-sec .adv-cards::-webkit-scrollbar,#screen-05 .rows::-webkit-scrollbar,.cases-stack.is-static::-webkit-scrollbar{display:none}
+  .adv-sec .adv-card,#screen-05 .row{flex:0 0 82%;scroll-snap-align:start}
+  .cases-stack.is-static{align-items:stretch}
+  .cases-stack.is-static .case-sheet{flex:0 0 88%;scroll-snap-align:start;margin-bottom:0}
+  .cases-stack.is-static .case-panel{height:100%}
+  .cases-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+}
+@media (max-width:640px){
+  :root{--sec:64px}
+  .adv-sec .adv-title{font-size:34px}
+  .adv-actions{flex-direction:column;align-items:stretch;gap:8px}
+  .adv-sec .adv-card h3{font-size:22px}
+  #screen-05 .row{flex-basis:78%}
+  .case-media{aspect-ratio:4/3}
+}
