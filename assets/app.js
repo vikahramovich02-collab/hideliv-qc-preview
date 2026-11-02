@@ -261,7 +261,7 @@
     const idx = (i + sheets.length) % sheets.length;
     markActive(idx);
     const target = sheets[idx];
-    if (mqAcc.matches) { stack.scrollTo({ left: target.offsetLeft - stack.offsetLeft - parseFloat(getComputedStyle(stack).scrollPaddingLeft || 0), behavior: reduceMotion ? 'auto' : 'smooth' }); return; }
+    if (mqAcc.matches) return; // мобилка: показывается только активная ситуация
     if (isStatic()) { target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); return; }
     let y = stack.getBoundingClientRect().top + window.scrollY;
     for (let k = 0; k < idx; k++) y += sheets[k].offsetHeight; // flow height + margin (transform does not affect layout)
@@ -534,6 +534,35 @@
   window.addEventListener('scroll', checkHdr, { passive: true });
   window.addEventListener('resize', checkHdr);
   checkHdr();
+
+  /* ---------- Cookie consent ---------- */
+  // 'all' — можно грузить аналитику; 'necessary' — только то, без чего сайт не работает.
+  // Яндекс Метрику / GA подключать внутри loadAnalytics(), не в <head>.
+  const CK = 'hd-cookie';
+  const getCk = () => { try { return localStorage.getItem(CK); } catch (e) { return null; } };
+  let analyticsLoaded = false;
+  const loadAnalytics = () => {
+    if (analyticsLoaded) return; analyticsLoaded = true;
+    window.hdConsent = 'all';
+    document.dispatchEvent(new CustomEvent('hd:consent', { detail: 'all' }));
+    // сюда — код счётчика Метрики (window.YM_ID = ...; ym(...))
+  };
+  const ck = $('#cookie');
+  if (ck) {
+    const close = () => { ck.classList.remove('is-shown'); setTimeout(() => { ck.hidden = true; }, 300); };
+    const open = () => { ck.hidden = false; requestAnimationFrame(() => ck.classList.add('is-shown')); };
+    $$('[data-cookie]', ck).forEach(b => b.addEventListener('click', () => {
+      const v = b.dataset.cookie;
+      try { localStorage.setItem(CK, v); } catch (e) {}
+      track('cookie_choice', { value: v });
+      if (v === 'all') loadAnalytics();
+      close();
+    }));
+    $$('[data-cookie-open]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); open(); }));
+    const saved = getCk();
+    if (saved === 'all') loadAnalytics();
+    else if (!saved) setTimeout(open, 1200);
+  }
 
   /* ---------- Block 05 rows: «Подробнее» expands sub-items ---------- */
   $$('.row-more').forEach(b => b.addEventListener('click', () => {

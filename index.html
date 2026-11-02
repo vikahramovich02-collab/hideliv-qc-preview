@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=34">
+<link rel="stylesheet" href="assets/style.css?v=36">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -793,6 +793,7 @@
     <div class="footer-bottom">
       <small>© 2026 hideliv QC</small>
       <a href="https://hideliv.com/privacy-policy">Политика конфиденциальности</a>
+      <a href="#" data-cookie-open>Настройки cookie</a>
     </div>
   </div>
 </footer>
@@ -895,6 +896,13 @@
   <p class="muted">Вход в личный кабинет пока недоступен.</p>
 </dialog>
 
-<script src="assets/app.js?v=34" defer></script>
+<div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Cookie" hidden>
+  <p>Мы используем cookie, чтобы сайт работал и чтобы понимать, что в нём улучшить. Подробнее — в <a href="https://hideliv.com/privacy-policy">политике конфиденциальности</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-blue cookie-btn" type="button" data-cookie="all">Принять</button>
+    <button class="cookie-min" type="button" data-cookie="necessary">Только необходимые</button>
+  </div>
+</div>
+<script src="assets/app.js?v=36" defer></script>
 </body>
 </html>

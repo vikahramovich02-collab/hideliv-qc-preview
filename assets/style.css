@@ -961,3 +961,64 @@ html,body{overflow-x:clip}
   #screen-05 .rows>[data-reveal],.adv-sec .adv-cards>[data-reveal],.cases-stack [data-reveal]{opacity:1;transform:none;transition:none}
   #screen-05 .rows,.adv-sec .adv-cards,.cases-stack.is-static{touch-action:pan-x pan-y;-webkit-overflow-scrolling:touch}
 }
+
+/* cookie */
+.cookie{position:fixed;left:var(--gutter);bottom:24px;z-index:90;width:min(440px,calc(100vw - var(--gutter) * 2));padding:20px;border-radius:10px;background:#fff;color:var(--ink);box-shadow:0 0 0 1px #E4E4E4,0 12px 40px rgba(14,15,17,.12);opacity:0;transform:translateY(16px);transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.cookie.is-shown{opacity:1;transform:none}
+.cookie p{font-size:14px;line-height:1.5;color:var(--muted);margin-bottom:16px}
+.cookie p a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.cookie p a:hover{color:var(--blue)}
+.cookie-actions{display:flex;align-items:center;gap:20px}
+.cookie-btn{height:40px;padding:0 20px}
+.cookie-btn::after,.cookie-btn .ico{display:none}
+.cookie-min{font-size:14px;color:var(--ink)}
+.cookie-min:hover{color:var(--blue)}
+@media (max-width:640px){
+  .cookie{left:12px;right:12px;bottom:12px;width:auto;padding:16px}
+  .cookie-actions{gap:12px}
+  .cookie-btn{flex:1;height:44px}
+  .cookie-min{min-height:44px}
+}
+@media (prefers-reduced-motion:reduce){.cookie{transition:none}}
+
+/* v3.3 — мобилка без горизонтальных свайпов: они конфликтовали с вертикальным скроллом на iOS */
+@media (max-width:960px){
+  .adv-sec .adv-cards,#screen-05 .rows,.cases-stack.is-static{display:flex;flex-direction:column;overflow:visible;scroll-snap-type:none;margin:0;padding:0;gap:12px}
+  .adv-sec .adv-card,#screen-05 .row,.cases-stack.is-static .case-sheet{flex:none;width:auto;scroll-snap-align:none}
+
+  /* 02: одна ситуация, переключение вкладками */
+  .cases-stack.is-static .case-sheet{display:none}
+  .cases-stack.is-static .case-sheet.is-active{display:block}
+  .cases-tabs{overflow-x:visible;flex-wrap:wrap}
+
+  /* 04: компактные строки — миниатюра слева */
+  .adv-sec .adv-card{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:start;padding:8px}
+  .adv-media{aspect-ratio:1/1;border-radius:6px}
+  .adv-step{left:6px;top:6px;padding:3px 6px;font-size:11px}
+  .adv-body{padding:4px 4px 4px 0;gap:4px}
+  .adv-sec .adv-card h3{font-size:18px}
+  .adv-sec .adv-card p{font-size:14px;line-height:1.45}
+  .adv-more{padding-top:6px;font-size:14px}
+
+  /* 05: компактные строки, чипы и детали — по «Подробнее» */
+  #screen-05 .rows{gap:0;border-top:1px solid var(--line)}
+  #screen-05 .row{display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+  #screen-05 .row-media{grid-column:1;grid-row:1 / span 2;aspect-ratio:1/1;margin:0;border-radius:6px}
+  #screen-05 .row-body{grid-column:2;gap:10px}
+  #screen-05 .row-top{gap:8px}
+  #screen-05 .row-top h3{font-size:18px}
+  #screen-05 .row-sub{font-size:14px}
+  #screen-05 .row-top .num{display:none}
+  #screen-05 .row-more{min-height:32px;font-size:14px}
+  #screen-05 .row-chips{display:none}
+  #screen-05 .row.is-open .row-chips{display:flex}
+  #screen-05 .row-text{font-size:14px}
+  #screen-05 .row-detail{grid-column:auto}
+  #screen-05 .row-items{display:none}
+}
+@media (max-width:960px){
+  .cases-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;margin:0}
+  .case-tab{height:44px;padding:0 6px;font-size:13px;line-height:1.2;white-space:normal}
+  .cases-next{margin:0;padding:8px 0}
+  #screen-05 .row{width:100%}
+}
