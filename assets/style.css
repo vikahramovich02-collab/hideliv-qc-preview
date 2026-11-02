@@ -954,3 +954,10 @@ body.dlg-open .header{visibility:hidden}
 .adv-more:hover{color:var(--ink)}
 .adv-sec .adv-cards,.adv-sec .adv-card,.adv-sec .adv-card h3{color:var(--ink)}
 @media (max-width:640px){.adv-link{display:flex;justify-content:center;min-height:44px;align-items:center}}
+
+/* v3.2 — мобилка: карточки в свайпах не анимируются по одной (дёргались и обрезались), страница не ездит вбок */
+html,body{overflow-x:clip}
+@media (max-width:960px){
+  #screen-05 .rows>[data-reveal],.adv-sec .adv-cards>[data-reveal],.cases-stack [data-reveal]{opacity:1;transform:none;transition:none}
+  #screen-05 .rows,.adv-sec .adv-cards,.cases-stack.is-static{touch-action:pan-x pan-y;-webkit-overflow-scrolling:touch}
+}
