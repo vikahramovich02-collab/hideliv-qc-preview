@@ -941,3 +941,16 @@ body.dlg-open .header{visibility:hidden}
   #screen-05 .row{flex-basis:78%}
   .case-media{aspect-ratio:4/3}
 }
+
+/* v3.1 — 04 без фото-фона, градиента и стекла: чистый светлый блок */
+.adv-sec{background:#F3F4F6;color:var(--ink)}
+.adv-sec .adv-intro{color:var(--muted)}
+.adv-link{color:var(--ink)}
+.adv-link:hover{color:var(--blue)}
+.adv-sec .adv-card{background:#fff;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;padding:8px}
+.adv-sec .adv-card p{color:var(--muted)}
+.adv-body{padding:20px 16px 16px}
+.adv-more{color:var(--blue)}
+.adv-more:hover{color:var(--ink)}
+.adv-sec .adv-cards,.adv-sec .adv-card,.adv-sec .adv-card h3{color:var(--ink)}
+@media (max-width:640px){.adv-link{display:flex;justify-content:center;min-height:44px;align-items:center}}
