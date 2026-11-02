@@ -561,7 +561,15 @@
     $$('[data-cookie-open]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); open(); }));
     const saved = getCk();
     if (saved === 'all') loadAnalytics();
-    else if (!saved) setTimeout(open, 1200);
+    else if (!saved) {
+      // не перекрываем первый экран: показываем, когда ушли с hero
+      const hero = $('.hero');
+      const check = () => {
+        const lim = hero ? hero.offsetHeight * 0.6 : window.innerHeight * 0.6;
+        if (window.scrollY > lim) { window.removeEventListener('scroll', check); open(); }
+      };
+      window.addEventListener('scroll', check, { passive: true }); check();
+    }
   }
 
   /* ---------- Block 05 rows: «Подробнее» expands sub-items ---------- */

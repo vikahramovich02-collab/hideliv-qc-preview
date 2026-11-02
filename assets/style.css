@@ -1022,3 +1022,19 @@ html,body{overflow-x:clip}
   .cases-next{margin:0;padding:8px 0}
   #screen-05 .row{width:100%}
 }
+
+/* cookie v2 — тонкая строка по центру внизу, появляется после первого экрана */
+.cookie{left:50%;right:auto;bottom:16px;width:max-content;max-width:calc(100vw - var(--gutter) * 2);display:flex;align-items:center;gap:24px;padding:10px 10px 10px 20px;transform:translate(-50%,16px)}
+.cookie.is-shown{transform:translate(-50%,0)}
+.cookie p{margin:0;font-size:14px}
+.cookie-actions{flex:none;gap:16px}
+.cookie-btn{height:36px;padding:0 16px;font-size:14px}
+.cookie-min{order:-1}
+@media (max-width:760px){
+  .cookie{left:8px;right:8px;bottom:8px;width:auto;max-width:none;flex-direction:column;align-items:stretch;gap:10px;padding:12px;transform:translateY(16px)}
+  .cookie.is-shown{transform:none}
+  .cookie p{font-size:13px}
+  .cookie-actions{gap:8px}
+  .cookie-btn{flex:1;height:40px}
+  .cookie-min{flex:1;min-height:40px;border-radius:6px;box-shadow:inset 0 0 0 1px #E4E4E4}
+}
