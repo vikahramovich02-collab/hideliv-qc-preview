@@ -7,7 +7,7 @@
 <title>hideliv qc — варианты экрана 04</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=31">
+<link rel="stylesheet" href="assets/style.css?v=33">
 <style>
 .vlabel{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--gutter);background:#151617;color:#fff;font-size:14px}
 .vlabel b{font-weight:500}
@@ -15,7 +15,7 @@
 .vlabel a{color:#9DB2FF;text-decoration:none;white-space:nowrap}
 
 /* ---------- B: отчёт в центре, шаги вокруг ---------- */
-.vb{padding:var(--sec) 0;background:#F3F4F6}
+.vb{padding:var(--sec) 0;background:#fff}
 .vb-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:stretch}
 .vb-photo{position:relative;border-radius:10px;overflow:hidden;min-height:560px;background:#111}
 .vb-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -24,7 +24,7 @@
 .vb-text h2{font-size:48px;line-height:1.08;font-weight:400;letter-spacing:-.025em;margin:20px 0 16px}
 .vb-text>p{font-size:17px;color:var(--muted);margin-bottom:32px}
 .vb-steps{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
-.vb-step{display:grid;grid-template-columns:88px minmax(0,1fr);gap:16px;align-items:center;padding:12px;border-radius:8px;background:#fff}
+.vb-step{display:grid;grid-template-columns:88px minmax(0,1fr);gap:16px;align-items:center;padding:12px;border-radius:8px;background:#F3F4F6}
 .vb-step img{width:88px;height:66px;object-fit:cover;border-radius:6px}
 .vb-step h3{font-size:18px;font-weight:500;margin-bottom:2px}
 .vb-step p{font-size:14px;line-height:1.45;color:var(--muted)}
@@ -60,8 +60,38 @@
 </head>
 <body>
 
-<div class="vlabel"><b>Вариант A — на основной странице</b><span>Тёмный блок, три шага с фото</span><a href="./#screen-04">Смотреть на сайте →</a></div>
-<div class="vlabel" style="position:static;background:#2446D9"><b>Ниже — варианты B и C для сравнения</b></div>
+<div class="vlabel"><b>Вариант A — сейчас на основной странице</b><span>Светлый блок, три шага с фото</span><a href="./#screen-04">Смотреть на сайте →</a></div>
+<section class="adv-sec" id="var-a" data-header="light" aria-labelledby="h4-title">
+  <div class="container adv-wrap">
+    <div class="adv-head">
+      <div>
+        <p class="tag"><i></i>04 / Как мы проверяем</p>
+        <h2 id="h4-title" class="adv-title">Найдём брак,<br>пока он не стал убытком</h2>
+      </div>
+      <div class="adv-side">
+        <p class="adv-intro">Три шага от вашего задания до решения по партии.</p>
+        <div class="adv-actions">
+          <a class="btn btn-blue" href="./#screen-08">Заказать инспекцию</a>
+          <a class="adv-link" href="./#screen-04">Скачать отчёт</a>
+        </div>
+      </div>
+    </div>
+    <div class="adv-cards">
+      <article class="adv-card">
+        <figure class="adv-media"><img src="assets/img/rep-1.webp" alt="Инспектор отмечает пункты бумажного брифа на проверку термостакана" width="1600" height="1200" loading="lazy"><span class="adv-step">Шаг 1</span></figure>
+        <div class="adv-body"><h3>Умный бриф</h3><p>Вы описываете товар — мы добавляем проверки скрытых рисков вашей категории.</p><a class="adv-more" href="./#screen-04">Открыть бриф →</a></div>
+      </article>
+      <article class="adv-card">
+        <figure class="adv-media"><img src="assets/img/rep-2.webp" alt="Фото дефекта с фабрики: метки на сколе покрытия и протечке крышки" width="1600" height="1200" loading="lazy"><span class="adv-step">Шаг 2</span></figure>
+        <div class="adv-body"><h3>Инспекция на фабрике</h3><p>Эксперт вашей категории проверяет выборку по AQL: фото, замеры, тесты.</p></div>
+      </article>
+      <article class="adv-card">
+        <figure class="adv-media"><img src="assets/img/rep-3.webp" alt="Отчёт об инспекции партии с фото дефектов и заключением" width="1600" height="1200" loading="lazy"><span class="adv-step">Шаг 3</span></figure>
+        <div class="adv-body"><h3>Отчёт и решение</h3><p>Заключение — на первой странице, бриф — в приложении. Сразу видно, какие проверки выполнены и что обнаружено.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
 
 <div class="vlabel"><b>Вариант B</b><span>Фото отчёта главное, шаги рядом — карточками</span><span></span></div>
 <section class="vb">
