@@ -1038,3 +1038,15 @@ html,body{overflow-x:clip}
   .cookie-btn{flex:1;height:40px}
   .cookie-min{flex:1;min-height:40px;border-radius:6px;box-shadow:inset 0 0 0 1px #E4E4E4}
 }
+
+/* footer v2 — сплошной синий во всю ширину, без карточки */
+.footer{padding:0;background:#2446D9;color:#fff}
+.footer-card{background:none;color:#fff;border-radius:0;padding:64px var(--gutter) 32px}
+.footer-col a{color:#fff}
+.footer-col a:hover{color:rgba(255,255,255,.7)}
+.footer-label,.footer-insured{color:rgba(255,255,255,.65)}
+.footer-bottom{border-top-color:rgba(255,255,255,.2);color:rgba(255,255,255,.65)}
+.footer-bottom a:hover{color:#fff}
+.footer .logo{color:#fff}
+@media (max-width:960px){.footer,.footer-card{padding-left:0;padding-right:0}.footer-card{padding:48px var(--gutter) 28px;border-radius:0}}
+.footer .logo-mark{color:#fff}
