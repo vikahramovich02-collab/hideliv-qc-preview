@@ -265,9 +265,9 @@ h1.hero-title{margin:0}
 .roi{margin:8px 0 4px;padding:12px 14px;border-radius:8px;background:#EEF2FF;font-size:16px;color:#151617}
 .roi b{color:#2446D9;font-weight:600}
 .calc-bg{inset:0}
-.calc-bg img{transform:none!important;object-position:50% 62%;filter:none}
-.calc-bg::after{display:none}
-.calc-bg::before{background:linear-gradient(180deg,rgba(4,8,30,.55) 0%,rgba(4,8,30,.15) 35%,rgba(4,8,30,.1) 70%,rgba(4,8,30,.5) 100%),linear-gradient(90deg,rgba(4,8,30,.45) 0%,rgba(4,8,30,0) 55%)}
+.calc-bg img{transform:none!important;object-position:50% 55%;filter:grayscale(1) contrast(1.15) brightness(1.05)}
+.calc-bg::after{display:block;background:#1E4FFF;mix-blend-mode:multiply;opacity:1}
+.calc-bg::before{background:linear-gradient(180deg,rgba(4,8,36,.6) 0%,rgba(4,8,36,.25) 40%,rgba(4,8,36,.35) 100%)}
 .calc-sec{padding-top:160px;padding-bottom:160px}
 .calc-inputs{background:rgba(8,18,52,.92);-webkit-backdrop-filter:none;backdrop-filter:none}
 /* get */
@@ -568,7 +568,7 @@ h1.hero-title{margin:0}
 
 <!-- 03 -->
 <section class="calc-sec" id="screen-03" data-header="blue" aria-labelledby="loss-title">
-  <div class="calc-bg" aria-hidden="true"><img src="assets/img/container-loading-dark.webp" alt="" width="1920" height="1086" fetchpriority="low"></div>
+  <div class="calc-bg" aria-hidden="true"><img src="assets/img/hero-bg-2.webp" alt="" width="1920" height="1086" fetchpriority="low"></div>
   <div class="container">
     <div class="island">
       <div class="head head-invert">
@@ -783,7 +783,7 @@ h1.hero-title{margin:0}
 
 <!-- 08 -->
 <div class="start-wrap" data-header="dark">
-<div class="start-bg" aria-hidden="true"><img src="assets/img/hero-bg-2.webp" alt="" width="1920" height="1086" loading="lazy"></div>
+<div class="start-bg" aria-hidden="true"><img src="assets/img/container-loading-dark.webp" alt="" width="1920" height="1086" loading="lazy"></div>
 <section class="start-sec" id="screen-08" aria-labelledby="nf-title">
   <div class="container">
     <div class="island-form">
@@ -794,7 +794,7 @@ h1.hero-title{margin:0}
           <p class="lead" data-reveal style="--d:.12s">Бесплатно составим программу проверки под ваш товар — с учётом ваших требований и скрытых рисков.</p>
         </div>
         <div class="start-price" data-reveal style="--d:.16s">
-          <p class="price-line"><span>Инспекция</span> <strong>от 5 000 ₽</strong>
+          <p class="price-line"><span>Инспекция</span> <strong>от 18 000 ₽</strong>
             <button class="info" type="button" aria-label="Из чего складывается стоимость" aria-expanded="false" aria-controls="nf-price-note"><svg class="ico"><use href="#i-info"/></svg></button>
           </p>
           <div class="popover" id="nf-price-note" role="tooltip" hidden><p>Стоимость зависит от категории товара, объёма партии, количества специальных тестов, расположения фабрики и срочности выезда.</p></div>
