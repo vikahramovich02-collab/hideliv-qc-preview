@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=38">
+<link rel="stylesheet" href="assets/style.css?v=39">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -210,7 +210,8 @@
 }
 </script>
 <style>
-.v2-bar{position:relative;z-index:60;padding:10px var(--gutter);background:#151617;color:rgba(255,255,255,.75);font-size:13px;text-align:center}
+.v2-bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:80;padding:6px 12px;border-radius:999px;background:rgba(21,22,23,.85);color:rgba(255,255,255,.75);font-size:12px;line-height:1.4;white-space:nowrap}
+@media (max-width:760px){.v2-bar{bottom:auto;top:66px;left:auto;right:8px;transform:none}}
 .v2-bar a{color:#9DB2FF;text-decoration:none;margin-left:6px}
 .hero-slider{display:none!important}
 h1.hero-title{margin:0}
@@ -349,7 +350,7 @@ html .footer .logo-mark{color:#2446D9}
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
 </svg>
 
-<div class="v2-bar">Версия 3 — по обратной связи: первый экран, истории, калькулятор, отчёт. <a href="./v2.html">v2</a> · <a href="./">v1</a></div>
+<div class="v2-bar">Версия 3 · <a href="./v2.html">v2</a> · <a href="./">v1</a></div>
 <header class="header" id="top">
   <div class="header-row">
     <div class="seg-brand">
@@ -985,7 +986,7 @@ html .footer .logo-mark{color:#2446D9}
     <button class="cookie-min" type="button" data-cookie="necessary">Только необходимые</button>
   </div>
 </div>
-<script src="assets/app.js?v=38" defer></script>
+<script src="assets/app.js?v=39" defer></script>
 <script>
 (() => {
   const $ = (q, r = document) => r.querySelector(q), $$ = (q, r = document) => [...r.querySelectorAll(q)];
