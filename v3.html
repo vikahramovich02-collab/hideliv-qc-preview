@@ -265,9 +265,11 @@ h1.hero-title{margin:0}
 .roi{margin:8px 0 4px;padding:12px 14px;border-radius:8px;background:#EEF2FF;font-size:16px;color:#151617}
 .roi b{color:#2446D9;font-weight:600}
 .calc-bg{inset:0}
-.calc-bg img{transform:none!important;object-position:50% 55%;filter:grayscale(1) contrast(1.05) brightness(1.25)}
-.calc-bg::after{opacity:.9}
-.calc-bg::before{background:linear-gradient(180deg,rgba(4,8,36,.55) 0%,rgba(4,8,36,.2) 45%,rgba(4,8,36,.45) 100%)}
+.calc-bg img{transform:none!important;object-position:50% 62%;filter:none}
+.calc-bg::after{display:none}
+.calc-bg::before{background:linear-gradient(180deg,rgba(4,8,30,.55) 0%,rgba(4,8,30,.15) 35%,rgba(4,8,30,.1) 70%,rgba(4,8,30,.5) 100%),linear-gradient(90deg,rgba(4,8,30,.45) 0%,rgba(4,8,30,0) 55%)}
+.calc-sec{padding-top:160px;padding-bottom:160px}
+.calc-inputs{background:rgba(8,18,52,.92);-webkit-backdrop-filter:none;backdrop-filter:none}
 /* get */
 .get-sec{background:#F3F4F6;padding-bottom:var(--sec);margin-top:0}
 .get-tabs{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px}
@@ -566,7 +568,7 @@ h1.hero-title{margin:0}
 
 <!-- 03 -->
 <section class="calc-sec" id="screen-03" data-header="blue" aria-labelledby="loss-title">
-  <div class="calc-bg" aria-hidden="true"><img src="assets/img/container-loading-dark.webp" alt="" width="1920" height="1086" loading="lazy"></div>
+  <div class="calc-bg" aria-hidden="true"><img src="assets/img/container-loading-dark.webp" alt="" width="1920" height="1086" fetchpriority="low"></div>
   <div class="container">
     <div class="island">
       <div class="head head-invert">
